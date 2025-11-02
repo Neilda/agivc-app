@@ -74,9 +74,6 @@ export function Header() {
                 <div className="absolute top-12 left-0 w-64">
                   <div className="bg-background border border-border rounded-xl shadow-lg py-4 px-2">
                     <div className="space-y-1">
-                      <div className="px-4 py-2">
-                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Our Story</p>
-                      </div>
                       <Link
                         href="/about"
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
@@ -94,6 +91,12 @@ export function Header() {
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
                       >
                         Team & Partners
+                      </Link>
+                      <Link
+                        href="/press-kit"
+                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
+                      >
+                        Press Kit
                       </Link>
                     </div>
                   </div>
@@ -197,6 +200,12 @@ export function Header() {
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Team & Partners
+              </Link>
+              <Link
+                href="/press-kit"
+                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+              >
+                Press Kit
               </Link>
             </div>
             <Link

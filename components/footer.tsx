@@ -1,6 +1,7 @@
 "use client"
 
 import { Facebook, Linkedin, Twitter } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -15,74 +16,75 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-sm">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                <Link href="/about" className="text-primary-foreground/70 hover:text-primary-foreground transition">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Portfolio
-                </a>
+                <Link
+                  href="/success-stories"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition"
+                >
+                  Success Stories
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  News
-                </a>
+                <Link href="/press-kit" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                  Press Kit
+                </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Resources</h4>
+            <h4 className="font-semibold mb-4 text-sm">For Founders</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Blog
-                </a>
+                <Link
+                  href="/accelerator"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition"
+                >
+                  Accelerator
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Insights
-                </a>
+                <Link href="/directory" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                  Founders Directory
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                <Link href="/events" className="text-primary-foreground/70 hover:text-primary-foreground transition">
                   Events
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Support
+                <a
+                  href="https://discord.gg/6M45X7ySUc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition"
+                >
+                  Join Discord
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Connect</h4>
+            <h4 className="font-semibold mb-4 text-sm">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Contact
-                </a>
+                <Link href="/sponsor" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                  Become a Sponsor
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Careers
-                </a>
+                <Link href="/privacy" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Press
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition">
-                  Privacy
-                </a>
+                <Link href="/terms" className="text-primary-foreground/70 hover:text-primary-foreground transition">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>

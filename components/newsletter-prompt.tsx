@@ -6,7 +6,7 @@ export function NewsletterPrompt() {
         <p className="text-lg text-foreground/70 mb-8">
           Subscribe to our newsletter for exclusive founder insights, investment trends, and event announcements.
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <input
             type="email"
             placeholder="Enter your email"

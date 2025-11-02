@@ -29,8 +29,8 @@
   --chart-3: oklch(0.7 0.08 200);
   --chart-4: oklch(0.6 0.1 40);
   --chart-5: oklch(0.55 0.1 260);
-  /* Reduced default radius from 0.125rem to 0.5rem for less rounded corners */
-  --radius: 0.5rem;
+  /* Reduced radius from 0.5rem to 0.375rem for less rounded buttons */
+  --radius: 0.375rem;
   --sidebar: oklch(0.96 0.005 70);
   --sidebar-foreground: oklch(0.2 0.02 0);
   --sidebar-primary: oklch(0.25 0.02 0);
