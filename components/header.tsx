@@ -10,8 +10,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="mx-auto">
+        <div className="flex justify-between items-center h-16 px-4">
           <Link href="/" className="flex-shrink-0">
             <h1 className="text-xl font-bold text-foreground">AGIVC</h1>
           </Link>
@@ -159,7 +159,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <nav className="md:hidden pb-4 space-y-4">
+          <nav className="md:hidden pb-4 space-y-4 px-4">
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Community</p>
               <Link

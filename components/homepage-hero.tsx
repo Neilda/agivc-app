@@ -1,15 +1,15 @@
 export function HomepageHero() {
   return (
     <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight">
-            <span className="text-foreground">Investing in Canada's </span>
-            <span className="underline decoration-accent decoration-[6px] underline-offset-4">AI and robotics</span>
-            <span className="text-foreground"> founders</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
+            <span className="text-foreground">Accelerate </span>
+            <span className="underline decoration-accent decoration-[6px] underline-offset-4">applied AI</span>
+            <span className="text-foreground"> through community, code and startups</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-2xl leading-relaxed">
-            We back builders with capital, community, and industry partners to go from idea to impact.
+            There's a lot of talking about AI out there. Our people prefer to ship and then talk about it.
           </p>
         </div>
 
