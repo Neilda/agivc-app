@@ -1,5 +1,3 @@
-"use client"
-
 import { Facebook, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 

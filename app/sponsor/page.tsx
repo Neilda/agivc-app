@@ -7,6 +7,7 @@ import { SponsorPackages } from "@/components/sponsor-packages"
 import { SponsorAudience } from "@/components/sponsor-audience"
 import { SponsorSocialProof } from "@/components/sponsor-social-proof"
 import { SponsorCTA } from "@/components/sponsor-cta"
+import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
 
 export const metadata = {
   title: "Become a Sponsor | AI Canada Fund",
@@ -16,16 +17,19 @@ export const metadata = {
 
 export default function SponsorPage() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="relative bg-background text-foreground">
       <Header />
-      <SponsorHero />
-      <SponsorValue />
-      <SponsorBenefits />
-      <SponsorPackages />
-      <SponsorAudience />
-      <SponsorSocialProof />
-      <SponsorCTA />
+      <div className="blur-[2px] pointer-events-none">
+        <SponsorHero />
+        <SponsorValue />
+        <SponsorBenefits />
+        <SponsorPackages />
+        <SponsorAudience />
+        <SponsorSocialProof />
+        <SponsorCTA />
+      </div>
       <Footer />
+      <ComingSoonOverlay />
     </main>
   )
 }

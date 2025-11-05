@@ -15,7 +15,7 @@ export function MediaContact() {
               For media inquiries, interviews, or press releases, please contact our communications team.
             </p>
             <Button variant="outline" className="w-full bg-transparent" asChild>
-              <a href="mailto:press@agivc.ca">Email Press Team</a>
+              <a href="mailto:info@agiventures.ca">Email Press Team</a>
             </Button>
           </div>
 
@@ -26,7 +26,7 @@ export function MediaContact() {
               For general questions about AGIVC, our programs, or partnership opportunities.
             </p>
             <Button variant="outline" className="w-full bg-transparent" asChild>
-              <a href="mailto:hello@agivc.ca">Email General Team</a>
+              <a href="mailto:info@agiventures.ca">Email General Team</a>
             </Button>
           </div>
         </div>

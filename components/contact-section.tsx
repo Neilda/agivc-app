@@ -8,7 +8,7 @@ export function ContactSection() {
         </p>
         <div className="space-y-3">
           <p className="text-foreground">
-            <span className="font-semibold">Press & Partnerships:</span> hello@aicanada.fund
+            <span className="font-semibold">Press & Partnerships:</span> info@agiventures.ca
           </p>
           <p className="text-foreground/70">Typically respond within 48 hours</p>
         </div>

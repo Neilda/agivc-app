@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SuccessStoriesHero } from "@/components/success-stories-hero"
 import { CaseStudiesGrid } from "@/components/case-studies-grid"
+import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
 
 export const metadata = {
   title: "Success Stories | AI Canada Fund",
@@ -10,11 +11,14 @@ export const metadata = {
 
 export default function SuccessStoriesPage() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="relative bg-background text-foreground">
       <Header />
-      <SuccessStoriesHero />
-      <CaseStudiesGrid />
+      <div className="blur-[2px] pointer-events-none">
+        <SuccessStoriesHero />
+        <CaseStudiesGrid />
+      </div>
       <Footer />
+      <ComingSoonOverlay />
     </main>
   )
 }

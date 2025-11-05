@@ -1,18 +1,17 @@
 export function WhatWeDo() {
   const services = [
     {
-      title: "Programs and Events",
-      description:
-        "We host quarterly events, demo days, and founder workshops to foster community and accelerate growth.",
+      title: "Venture Studio",
+      description: "Build agentic AI solutions for companies ranging from startups to F50.",
     },
     {
-      title: "Founder Support",
-      description:
-        "Beyond capital, we provide mentorship, introductions, and strategic guidance to help founders succeed.",
+      title: "Community Events",
+      description: "Hackathons, meetups with companies like Cursor, ElevenLabs, LangChain and more.",
     },
     {
-      title: "Sponsor Partnerships",
-      description: "We connect sponsors with high-potential founders and provide exclusive access to our community.",
+      title: "AI Accelerator",
+      description:
+        "6 weeks program, with 2.5 weeks spent in San Fran. We also invest alongside our VC partners at the end of the program.",
     },
   ]
 

@@ -4,8 +4,8 @@ import { AboutHero } from "@/components/about-hero"
 import { MissionValues } from "@/components/mission-values"
 import { TeamAndPartners } from "@/components/team-and-partners"
 import { FoundersDirectoryPreview } from "@/components/founders-directory-preview"
-import { SuccessStoriesPreview } from "@/components/success-stories-preview"
 import { ContactSection } from "@/components/contact-section"
+import { HashScrollHandler } from "@/components/hash-scroll-handler"
 
 export const metadata = {
   title: "About Us | AI Canada Fund",
@@ -15,12 +15,12 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="bg-background text-foreground">
+      <HashScrollHandler />
       <Header />
       <AboutHero />
       <MissionValues />
       <TeamAndPartners />
       <FoundersDirectoryPreview />
-      <SuccessStoriesPreview />
       <ContactSection />
       <Footer />
     </main>

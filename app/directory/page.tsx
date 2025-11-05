@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { DirectoryHero } from "@/components/directory-hero"
 import { DirectoryOverview } from "@/components/directory-overview"
 import { DirectoryFilters } from "@/components/directory-filters"
+import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
 
 export const metadata = {
   title: "Founders Directory | AI Canada Fund",
@@ -11,12 +12,15 @@ export const metadata = {
 
 export default function DirectoryPage() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="relative bg-background text-foreground">
       <Header />
-      <DirectoryHero />
-      <DirectoryOverview />
-      <DirectoryFilters />
+      <div className="blur-[2px] pointer-events-none">
+        <DirectoryHero />
+        <DirectoryOverview />
+        <DirectoryFilters />
+      </div>
       <Footer />
+      <ComingSoonOverlay />
     </main>
   )
 }
