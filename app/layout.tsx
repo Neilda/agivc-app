@@ -17,6 +17,7 @@ const _geistMono = V0_Font_Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://agivc.ca"),
   title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
   description:
     "AGI Ventures Canada backs Canadian AI and robotics founders with capital, community, and industry partners to go from idea to impact.",
