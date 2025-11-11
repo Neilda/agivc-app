@@ -1,6 +1,6 @@
-import { Linkedin } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { Linkedin } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export function TeamAndPartners() {
   const team = [
@@ -22,7 +22,7 @@ export function TeamAndPartners() {
       linkedin: "https://www.linkedin.com/in/wilson-li-cpa-ca-a79a103b/",
       image: "/headshots/wilson-li.jpeg",
     },
-  ]
+  ];
 
   return (
     <section id="team" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary-50">
@@ -30,7 +30,10 @@ export function TeamAndPartners() {
         <h2 className="text-3xl font-bold mb-12 text-foreground">Team</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {team.map((member, index) => (
-            <div key={index} className="p-6 bg-background rounded-xl border border-border">
+            <div
+              key={index}
+              className="p-6 bg-background rounded-xl border border-border"
+            >
               <div className="mb-4">
                 {member.image ? (
                   <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4">
@@ -52,8 +55,12 @@ export function TeamAndPartners() {
               </div>
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-sm text-foreground font-semibold">{member.role}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-foreground font-semibold">
+                    {member.role}
+                  </p>
                 </div>
                 <Link
                   href={member.linkedin}
@@ -69,5 +76,5 @@ export function TeamAndPartners() {
         </div>
       </div>
     </section>
-  )
+  );
 }
