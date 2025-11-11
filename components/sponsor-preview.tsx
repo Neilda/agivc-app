@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function SponsorPreview() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section id="sponsor" className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-foreground">For Sponsors</h2>
         <p className="text-lg text-foreground/70 mb-8 max-w-2xl leading-relaxed">
