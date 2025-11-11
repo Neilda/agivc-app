@@ -2,34 +2,29 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SponsorHero } from "@/components/sponsor-hero"
 import { SponsorValue } from "@/components/sponsor-value"
-import { SponsorBenefits } from "@/components/sponsor-benefits"
-import { SponsorPackages } from "@/components/sponsor-packages"
 import { SponsorAudience } from "@/components/sponsor-audience"
+import { SponsorPrograms } from "@/components/sponsor-programs"
 import { SponsorSocialProof } from "@/components/sponsor-social-proof"
-import { SponsorCTA } from "@/components/sponsor-cta"
-import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
+import { SponsorInterestCTA } from "@/components/sponsor-interest-cta"
 
 export const metadata = {
-  title: "Become a Sponsor | AI Canada Fund",
+  title: "Become a Sponsor | AGIVC",
   description:
-    "Partner with Canada's leading AI and robotics fund. Access top founders and build strategic relationships.",
+    "Partner with Canada's leading AI and robotics fund. Sponsor meetups, hackathons, newsletters, video series, accelerator programs, and more.",
 }
 
 export default function SponsorPage() {
   return (
-    <main className="relative bg-background text-foreground">
+    <main className="bg-background text-foreground">
       <Header />
-      <div className="blur-[2px] pointer-events-none">
-        <SponsorHero />
-        <SponsorValue />
-        <SponsorBenefits />
-        <SponsorPackages />
-        <SponsorAudience />
-        <SponsorSocialProof />
-        <SponsorCTA />
-      </div>
+      <SponsorHero />
+      <SponsorValue />
+      <SponsorAudience />
+      <SponsorPrograms />
+      <SponsorSocialProof />
+      <SponsorInterestCTA />
       <Footer />
-      <ComingSoonOverlay />
     </main>
   )
 }
+
