@@ -5,8 +5,9 @@ export function WhatWeDo() {
       description: "Build agentic AI solutions for companies ranging from startups to F50.",
     },
     {
-      title: "Community Events",
-      description: "Hackathons, meetups with companies like Cursor, ElevenLabs, LangChain and more.",
+      title: "Hackathons and Meetups",
+      description:
+        "Partner with companies like Cursor, ElevenLabs, LangChain and more. Our largest events typically have 400 attendees and are usually held at Invest Ottawa.",
     },
     {
       title: "AI Accelerator",
