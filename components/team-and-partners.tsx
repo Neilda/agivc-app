@@ -38,7 +38,7 @@ export function TeamAndPartners() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      className="object-cover grayscale"
                     />
                   </div>
                 ) : (
