@@ -6,6 +6,7 @@ import { HomepageHero } from "@/components/homepage-hero"
 import { WhoWeAre } from "@/components/who-we-are"
 import { WhatWeDo } from "@/components/what-we-do"
 import { SponsorPreview } from "@/components/sponsor-preview"
+import { VideoQuoteSection } from "@/components/video-quote-section"
 import { UpcomingEvents } from "@/components/upcoming-events"
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <HomepageHero />
       <WhoWeAre />
       <WhatWeDo />
+      <VideoQuoteSection />
       <SponsorPreview />
       <UpcomingEvents />
       <Footer />
