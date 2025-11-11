@@ -14,12 +14,12 @@ export function PastEvents() {
         <ul className="space-y-4 mb-8">
           {pastOutcomes.map((outcome, index) => (
             <li key={index} className="flex items-start gap-4">
-              <span className="text-accent text-xl font-bold flex-shrink-0">→</span>
+              <span className="text-foreground text-xl font-bold flex-shrink-0">→</span>
               <span className="text-lg text-foreground/70">{outcome}</span>
             </li>
           ))}
         </ul>
-        <Link href="#" className="text-accent font-semibold hover:text-accent/80 transition">
+        <Link href="#" className="text-foreground font-semibold hover:text-foreground/80 transition">
           View event archive →
         </Link>
       </div>

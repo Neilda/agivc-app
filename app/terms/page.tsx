@@ -89,7 +89,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-bold mb-4 text-foreground">Contact Us</h2>
               <p>
                 If you have questions about these Terms, please contact us at:{" "}
-                <a href="mailto:legal@agivc.ca" className="text-accent hover:underline">
+                <a href="mailto:legal@agivc.ca" className="text-foreground hover:underline">
                   legal@agivc.ca
                 </a>
               </p>

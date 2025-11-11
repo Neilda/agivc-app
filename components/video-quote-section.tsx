@@ -1,6 +1,6 @@
 export function VideoQuoteSection() {
   return (
-    <section className="py-24 px-4 bg-background">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
           <div className="w-full lg:w-[60%] aspect-video">

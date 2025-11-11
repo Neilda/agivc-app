@@ -11,7 +11,7 @@ export function AcceleratorHero() {
               The{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">AI Accelerator</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-accent/30 -rotate-1"></span>
+                <span className="absolute bottom-2 left-0 w-full h-3 bg-foreground/30 -rotate-1"></span>
               </span>{" "}
               for Canadian Founders
             </h1>

@@ -34,7 +34,7 @@ export function CaseStudiesGrid() {
             <div key={index} className="p-8 bg-secondary-50 rounded-2xl border border-border">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-foreground mb-1">{study.company}</h3>
-                <p className="text-sm text-accent font-semibold">Founder: {study.name}</p>
+                <p className="text-sm text-foreground font-semibold">Founder: {study.name}</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -50,7 +50,7 @@ export function CaseStudiesGrid() {
 
               <div className="mb-6 p-4 bg-background rounded-xl border border-border">
                 <h4 className="font-semibold text-foreground mb-2">Outcome</h4>
-                <p className="text-lg text-accent font-semibold">{study.outcome}</p>
+                <p className="text-lg text-foreground font-semibold">{study.outcome}</p>
               </div>
 
               <p className="text-foreground/70 italic">"{study.quote}"</p>

@@ -84,7 +84,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold mb-4 text-foreground">Contact Us</h2>
               <p>
                 If you have questions about this Privacy Policy, please contact us at:{" "}
-                <a href="mailto:privacy@agivc.ca" className="text-accent hover:underline">
+                <a href="mailto:privacy@agivc.ca" className="text-foreground hover:underline">
                   privacy@agivc.ca
                 </a>
               </p>

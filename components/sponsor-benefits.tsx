@@ -14,7 +14,7 @@ export function SponsorBenefits() {
         <ul className="space-y-4">
           {benefits.map((benefit, index) => (
             <li key={index} className="flex items-start gap-4">
-              <span className="text-accent text-xl font-bold flex-shrink-0">✓</span>
+              <span className="text-foreground text-xl font-bold flex-shrink-0">✓</span>
               <span className="text-lg text-foreground/70">{benefit}</span>
             </li>
           ))}

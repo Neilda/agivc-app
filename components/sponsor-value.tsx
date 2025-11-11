@@ -1,6 +1,6 @@
 export function SponsorValue() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-accent-50">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-foreground">Why Sponsor With Us</h2>
         <p className="text-lg text-foreground/70 mb-6 leading-relaxed">

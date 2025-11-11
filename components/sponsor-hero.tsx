@@ -4,7 +4,7 @@ export function SponsorHero() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance leading-tight">
           <span className="text-foreground">Partner with Canada's leading </span>
-          <span className="underline decoration-accent decoration-4">AI and robotics</span>
+          <span className="underline decoration-foreground decoration-4">AI and robotics</span>
           <span className="text-foreground"> fund</span>
         </h1>
         <p className="text-xl text-foreground/80 max-w-2xl">

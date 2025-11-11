@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -129,13 +129,6 @@ export function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
-            </a>
-            <a
-              href="#"
-              className="text-primary-foreground/70 hover:text-primary-foreground transition"
-              aria-label="Facebook"
-            >
-              <Facebook size={20} />
             </a>
           </div>
         </div>

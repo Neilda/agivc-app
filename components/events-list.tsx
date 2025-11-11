@@ -40,7 +40,7 @@ export function EventsList() {
                   </div>
                   <p className="text-foreground/70">{event.takeaway}</p>
                 </div>
-                <button className="px-6 py-3 bg-accent text-accent-foreground rounded-full font-semibold hover:bg-accent/90 transition whitespace-nowrap">
+                <button className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition whitespace-nowrap">
                   Register
                 </button>
               </div>

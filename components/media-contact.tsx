@@ -9,7 +9,7 @@ export function MediaContact() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="border border-border rounded-xl p-8 bg-background">
-            <Mail className="w-8 h-8 mb-4 text-accent" />
+            <Mail className="w-8 h-8 mb-4 text-foreground" />
             <h3 className="text-xl font-semibold mb-2">Press Inquiries</h3>
             <p className="text-foreground/70 mb-4">
               For media inquiries, interviews, or press releases, please contact our communications team.
@@ -20,7 +20,7 @@ export function MediaContact() {
           </div>
 
           <div className="border border-border rounded-xl p-8 bg-background">
-            <MessageSquare className="w-8 h-8 mb-4 text-accent" />
+            <MessageSquare className="w-8 h-8 mb-4 text-foreground" />
             <h3 className="text-xl font-semibold mb-2">General Inquiries</h3>
             <p className="text-foreground/70 mb-4">
               For general questions about AGIVC, our programs, or partnership opportunities.

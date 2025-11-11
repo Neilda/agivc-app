@@ -49,7 +49,7 @@ export function DirectoryFilters() {
           {filteredFounders.map((founder, index) => (
             <div key={index} className="p-6 bg-background rounded-2xl border border-border hover:shadow-lg transition">
               <h3 className="text-lg font-bold text-foreground mb-1">{founder.company}</h3>
-              <p className="text-sm text-accent font-semibold mb-3">{founder.name}</p>
+              <p className="text-sm text-foreground font-semibold mb-3">{founder.name}</p>
               <div className="flex gap-3">
                 <span className="px-3 py-1 bg-secondary-50 text-sm text-foreground rounded-full">{founder.stage}</span>
                 <span className="px-3 py-1 bg-secondary-50 text-sm text-foreground rounded-full">{founder.domain}</span>

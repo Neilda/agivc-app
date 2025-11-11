@@ -25,10 +25,10 @@ export function SponsorPackages() {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className="p-8 bg-background rounded-2xl border-2 border-border hover:border-accent transition"
+              className="p-8 bg-background rounded-2xl border-2 border-border hover:border-foreground transition"
             >
               <h3 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h3>
-              <p className="text-3xl font-bold text-accent mb-6">{pkg.price}</p>
+              <p className="text-3xl font-bold text-foreground mb-6">{pkg.price}</p>
               <p className="text-foreground/70">{pkg.description}</p>
             </div>
           ))}
