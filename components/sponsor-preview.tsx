@@ -6,7 +6,7 @@ export function SponsorPreview() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-foreground">For Sponsors</h2>
         <p className="text-lg text-foreground/70 mb-8 max-w-2xl leading-relaxed">
-          Partner with us to gain exclusive access to Canada's top AI and robotics founders. Sponsors receive premium
+          Partner with us to gain exclusive access to Canada's top AI founders. Sponsors receive premium
           placement in our community, featuring opportunities, early product access, and long-term strategic benefits.
         </p>
         <Link
