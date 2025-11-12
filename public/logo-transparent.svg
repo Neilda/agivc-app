@@ -1,0 +1,11 @@
+<svg width="200" height="90" xmlns="http://www.w3.org/2000/svg">
+  <!-- AGI (uppercase, white, bold) -->
+  <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="white" letter-spacing="-0.02em">AGI</text>
+  
+  <!-- ventures (lowercase, white, normal) -->
+  <text x="0" y="55" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="white">ventures</text>
+  
+  <!-- canada (lowercase, bright red, normal) -->
+  <text x="0" y="82" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#FF4444">canada</text>
+</svg>
+

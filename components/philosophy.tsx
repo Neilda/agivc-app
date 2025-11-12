@@ -25,7 +25,7 @@ export function Philosophy() {
   return (
     <section id="philosophy" className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">How We Think About Investing</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-primary text-center">How We Think About Investing</h2>
         <p className="text-lg text-muted-foreground mb-16 max-w-2xl">
           Our philosophy centers on founder success and long-term value creation.
         </p>

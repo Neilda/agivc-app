@@ -23,7 +23,7 @@ export function TeamAndPartners() {
   return (
     <section id="team" className="py-16 bg-secondary-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-foreground">Meet Our Team</h2>
+        <h2 className="text-3xl font-bold mb-12 text-primary text-center">Meet Our Team</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {team.map((member, index) => (
             <div key={index} className="p-6 bg-background rounded-xl border border-border">

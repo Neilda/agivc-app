@@ -15,9 +15,9 @@ export function HomepageHero() {
 
         <div className="flex justify-center lg:justify-end">
           <img
-            src="/abstract-illustration-of-ai-technology-and-innovat.jpg"
-            alt="AI Innovation Illustration"
-            className="w-full max-w-md rounded-2xl"
+            src="/landing-hero.jpg"
+            alt="AGI Ventures Canada community collaborating"
+            className="w-full max-w-2xl rounded-2xl object-cover"
           />
         </div>
       </div>

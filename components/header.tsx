@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
+import { Logo } from "@/components/logo"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,9 +13,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="mx-auto">
         <div className="flex justify-between items-center h-16 px-4">
-          <Link href="/" className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-foreground">AGIVC</h1>
-          </Link>
+          <Logo className="h-12 w-auto" />
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8 items-center">

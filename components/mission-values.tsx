@@ -111,7 +111,7 @@ export function MissionValues() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
           <div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">Our Mission</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-primary leading-tight text-center">Our Mission</h2>
           </div>
           <div className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed">
@@ -124,7 +124,7 @@ export function MissionValues() {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-12 text-foreground">Values</h2>
+          <h2 className="text-3xl font-bold mb-12 text-primary text-center">Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => (
               <div

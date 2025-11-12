@@ -23,7 +23,7 @@ export function EventsList() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-foreground">Upcoming Events</h2>
+        <h2 className="text-3xl font-bold mb-12 text-primary text-center">Upcoming Events</h2>
         <div className="space-y-4">
           {upcomingEvents.map((event, index) => (
             <div

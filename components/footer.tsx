@@ -1,5 +1,6 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react"
+import { Instagram, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
+import { Logo } from "@/components/logo"
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4">AGIVC</h3>
+            <Logo variant="footer" href="/" className="mb-4" />
             <p className="text-sm text-primary-foreground/70">Investing in Canada's AI and robotics founders.</p>
           </div>
           <div>
@@ -92,25 +93,31 @@ export function Footer() {
           <p className="text-sm text-primary-foreground/70">© 2025 AGI Ventures Canada. All rights reserved.</p>
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://x.com/AgiVentures"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary-foreground/70 hover:text-primary-foreground transition"
-              aria-label="Twitter"
+              aria-label="X (Twitter)"
             >
               <Twitter size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/agiventurescanada"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary-foreground/70 hover:text-primary-foreground transition"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/agiventurescanada/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary-foreground/70 hover:text-primary-foreground transition"
-              aria-label="Facebook"
+              aria-label="Instagram"
             >
-              <Facebook size={20} />
+              <Instagram size={20} />
             </a>
           </div>
         </div>

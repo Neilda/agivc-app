@@ -17,7 +17,7 @@ export function FounderSpotlights() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-foreground">Founder Spotlights</h2>
+        <h2 className="text-3xl font-bold mb-12 text-primary text-center">Founder Spotlights</h2>
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {spotlights.map((spotlight, index) => (
             <div key={index} className="p-6 bg-background rounded-2xl border border-border">

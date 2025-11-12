@@ -38,7 +38,7 @@ export function ComingSoonModal({ isOpen, onClose }: ComingSoonModalProps) {
         </button>
 
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Coming Soon</h2>
+          <h2 className="text-3xl font-bold mb-4 text-primary">Coming Soon</h2>
           <p className="text-muted-foreground mb-6">
             We're working hard to bring you this feature. Stay tuned for updates!
           </p>

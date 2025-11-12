@@ -46,7 +46,7 @@ export function ProgramBenefits() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">What You Get</h2>
+        <h2 className="text-4xl font-bold text-primary mb-12 text-center">What You Get</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
