@@ -8,15 +8,14 @@ export function HomepageHero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
             <span className="text-foreground">We </span>
             <span className="underline decoration-foreground decoration-[6px] underline-offset-4">
-              build AI
+              build solutions
             </span>
             <span className="text-foreground">
-              , run AI communities and invest in AI startups
+              , run communities and invest in AI
             </span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-2xl leading-relaxed">
-            There's a lot of talking about AI out there. We prefer to ship and
-            then talk about it.
+            There's a lot of talking about AI. We prefer to ship and educate.
           </p>
         </div>
 
