@@ -17,7 +17,7 @@ export function DirectoryOverview() {
               learning about our community.
             </p>
           </div>
-          <div className="p-6 bg-accent-50 rounded-2xl border border-border">
+          <div className="p-6 bg-muted/30 rounded-2xl border border-border">
             <h3 className="text-lg font-bold text-foreground mb-3">Sponsor Access</h3>
             <p className="text-foreground/70">
               Exclusive deeper access with detailed metrics, contact information, and collaboration opportunities.

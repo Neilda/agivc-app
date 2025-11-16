@@ -10,7 +10,7 @@ export function NewsletterPrompt() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-1 px-4 py-3 bg-secondary-50 border border-border rounded-full text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent"
+            className="flex-1 px-4 py-3 bg-secondary-50 border border-border rounded-full text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-foreground"
           />
           <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition whitespace-nowrap">
             Subscribe

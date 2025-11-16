@@ -12,7 +12,7 @@ export function ImpactSnapshots() {
         <div className="grid md:grid-cols-3 gap-8">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className="text-5xl font-bold text-accent mb-3">{metric.value}</div>
+              <div className="text-5xl font-bold text-foreground mb-3">{metric.value}</div>
               <p className="text-lg text-foreground/70">{metric.label}</p>
             </div>
           ))}

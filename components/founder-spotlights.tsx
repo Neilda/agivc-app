@@ -27,7 +27,7 @@ export function FounderSpotlights() {
             </div>
           ))}
         </div>
-        <Link href="/success-stories" className="text-accent font-semibold hover:text-accent/80 transition">
+        <Link href="/success-stories" className="text-foreground font-semibold hover:text-foreground/80 transition">
           View all success stories →
         </Link>
       </div>
