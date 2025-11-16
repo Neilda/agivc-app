@@ -37,7 +37,7 @@ export function TeamSection() {
   return (
     <section id="team" className="py-20 md:py-28 bg-muted/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-primary text-center">The Team</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">The Team</h2>
         <p className="text-lg text-muted-foreground mb-16 max-w-2xl">
           Experienced investors and operators dedicated to founder success.
         </p>

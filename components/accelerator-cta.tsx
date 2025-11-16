@@ -5,7 +5,7 @@ export function AcceleratorCTA() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">Ready to accelerate your AI startup?</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Ready to accelerate your AI startup?</h2>
         <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
           Applications are open for our next cohort. Join Canada's most ambitious AI founders.
         </p>

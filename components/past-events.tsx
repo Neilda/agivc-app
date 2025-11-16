@@ -10,7 +10,7 @@ export function PastEvents() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary-50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-primary text-center">Past Events</h2>
+        <h2 className="text-3xl font-bold mb-12 text-foreground">Past Events</h2>
         <ul className="space-y-4 mb-8">
           {pastOutcomes.map((outcome, index) => (
             <li key={index} className="flex items-start gap-4">

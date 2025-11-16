@@ -17,7 +17,7 @@ export function DirectoryFilters() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-primary text-center">Browse Founders</h2>
+        <h2 className="text-3xl font-bold mb-8 text-foreground">Browse Founders</h2>
 
         <div className="mb-8 flex gap-4 flex-wrap">
           <button

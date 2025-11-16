@@ -5,7 +5,7 @@ export function BrandAssets() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-primary text-center">Brand Assets</h2>
+        <h2 className="text-3xl font-bold mb-8">Brand Assets</h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="border border-border rounded-xl p-8 bg-muted/30">

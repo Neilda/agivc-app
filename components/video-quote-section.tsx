@@ -17,10 +17,10 @@ export function VideoQuoteSection() {
           {/* Quote */}
           <div className="flex items-center">
             <blockquote className="space-y-6">
-              <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 32 32">
+              <svg className="w-12 h-12 text-muted-foreground/30" fill="currentColor" viewBox="0 0 32 32">
                 <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8z" />
               </svg>
-              <p className="text-xl md:text-2xl font-sans leading-relaxed text-foreground">
+              <p className="text-xl md:text-2xl font-serif leading-relaxed text-foreground">
                 You can live in Iowa, you can live in Ottawa, you can live anywhere in the world, and all that matters
                 is what you ship. So if you ship good things… people will find you and people will share it.
               </p>

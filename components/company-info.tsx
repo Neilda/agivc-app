@@ -2,7 +2,7 @@ export function CompanyInfo() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-primary text-center">About AGI Ventures Canada</h2>
+        <h2 className="text-3xl font-bold mb-8">About AGI Ventures Canada</h2>
 
         <div className="space-y-6 text-foreground/80 leading-relaxed">
           <p>

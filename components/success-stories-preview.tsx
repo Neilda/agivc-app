@@ -10,7 +10,7 @@ export function SuccessStoriesPreview() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-accent-50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-primary text-center">Success Stories</h2>
+        <h2 className="text-3xl font-bold mb-12 text-foreground">Success Stories</h2>
         <ul className="space-y-4 mb-8">
           {stories.map((story, index) => (
             <li key={index} className="flex items-start gap-4">

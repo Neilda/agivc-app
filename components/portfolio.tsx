@@ -13,7 +13,7 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-primary text-center">Featured Investments</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-16">Featured Investments</h2>
 
         <div className="space-y-4">
           {portfolio.map((item, idx) => (

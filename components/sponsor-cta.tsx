@@ -2,7 +2,7 @@ export function SponsorCTA() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6 text-primary text-center">Ready to Get Started?</h2>
+        <h2 className="text-3xl font-bold mb-6 text-foreground">Ready to Get Started?</h2>
         <p className="text-lg text-foreground/70 mb-8">
           Let's explore how a partnership can unlock value for your organization.
         </p>

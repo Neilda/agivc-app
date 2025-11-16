@@ -20,7 +20,7 @@ export function SponsorPackages() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-primary text-center">Sponsorship Tiers</h2>
+        <h2 className="text-3xl font-bold mb-12 text-foreground">Sponsorship Tiers</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {packages.map((pkg, index) => (
             <div

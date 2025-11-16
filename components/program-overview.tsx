@@ -4,7 +4,7 @@ export function ProgramOverview() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-4xl font-bold text-primary mb-6 text-center">What Happens at AGIVC Accelerator</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6">What Happens at AGIVC Accelerator</h2>
           </div>
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">

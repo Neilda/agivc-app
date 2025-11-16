@@ -4,7 +4,7 @@ export function CTA() {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-primary text-center">Ready to Build the Future?</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Ready to Build the Future?</h2>
         <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto text-balance">
           Whether you're a founder with a bold vision or an LP seeking exceptional opportunities, let's talk.
         </p>

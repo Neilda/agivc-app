@@ -2,7 +2,7 @@ export function NewsletterPrompt() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6 text-primary text-center">Stay Updated</h2>
+        <h2 className="text-3xl font-bold mb-6 text-foreground">Stay Updated</h2>
         <p className="text-lg text-foreground/70 mb-8">
           Subscribe to our newsletter for exclusive founder insights, investment trends, and event announcements.
         </p>
