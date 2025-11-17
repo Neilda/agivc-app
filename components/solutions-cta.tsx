@@ -9,7 +9,7 @@ export function SolutionsCTA() {
           Ready to ship?
         </h2>
         <p className="text-xl text-muted-foreground mb-12 text-balance">
-          Tell us what you're building. We'll show you how we can help.
+          Tell us what you're building, and we'll show you how we can help ship it faster.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

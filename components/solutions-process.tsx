@@ -4,7 +4,7 @@ export function SolutionsProcess() {
       number: "01",
       title: "Discover",
       description:
-        "We start by understanding what you're trying to solve and what success looks like. Quick assessment of your technical landscape, existing workflows, and where AI creates the most value.",
+        "We start by understanding your goals and what success looks like. We quickly assess your technical landscape, existing workflows, and identify where AI will create the most value.",
       details: [
         "Problem definition",
         "Technical feasibility",
@@ -16,7 +16,7 @@ export function SolutionsProcess() {
       number: "02",
       title: "Build",
       description:
-        "We ship working software quickly. Start with a prototype, validate with real users, iterate based on feedback. You see progress weekly, not in months.",
+        "We ship working software fast. We start with a prototype, validate with real users, and iterate based on feedback. You see progress weekly, not quarterly.",
       details: [
         "Rapid prototyping",
         "Production deployment",
@@ -28,7 +28,7 @@ export function SolutionsProcess() {
       number: "03",
       title: "Scale",
       description:
-        "Once it works, we make it reliable. Monitoring, optimization, training for your team. The system improves as it runs, and your team knows how to maintain it.",
+        "Once it works, we make it reliable. We set up monitoring and optimization, train your team, and ensure the system improves over time. Your team will know how to maintain and extend it.",
       details: ["Performance monitoring", "Quality improvements", "Team training", "Ongoing support"],
     },
   ]
@@ -39,7 +39,7 @@ export function SolutionsProcess() {
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">How it works</h2>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            From first call to production in weeks. We move fast and keep things simple.
+            From first call to production in weeks. We move fast, keep things simple, and focus on what works.
           </p>
         </div>
 

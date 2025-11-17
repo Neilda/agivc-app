@@ -15,7 +15,7 @@ export function SolutionsHero() {
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed">
-              We build production AI systems that integrate with your workflow. From knowledge retrieval to agentic systems, we ship quickly and iterate based on what works.
+              We build production-ready AI systems that integrate seamlessly into your workflow. From knowledge retrieval to intelligent agents, we ship fast and iterate based on real results.
             </p>
             <Link
               href="mailto:info@agiventures.ca"
