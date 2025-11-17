@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">AGIVC</h3>
             <p className="text-sm text-primary-foreground/70">
-              Investing in Canada's AI.
+              Think in decades. Ship this weekend.
             </p>
           </div>
           <div>
@@ -117,14 +117,9 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <a
-              href="#"
-              className="text-primary-foreground/70 hover:text-primary-foreground transition"
-              aria-label="Twitter"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="#"
+              href="https://www.linkedin.com/company/agiventurescanada"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary-foreground/70 hover:text-primary-foreground transition"
               aria-label="LinkedIn"
             >

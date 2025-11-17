@@ -5,7 +5,7 @@ export function VideoQuoteSection() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
           <div className="w-full lg:w-[60%] aspect-video">
             <iframe
-              className="w-full h-full rounded-xl shadow-lg border border-border"
+              className="w-full h-full rounded-3xl shadow-lg border border-border"
               src="https://www.youtube.com/embed/L3Oo-vQdOZU?controls=0&modestbranding=1&rel=0&showinfo=0"
               title="AGIVC Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

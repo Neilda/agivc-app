@@ -64,7 +64,7 @@ export function MissionValues() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className={`${value.bgColor} rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between min-h-[320px] transition-transform hover:scale-[1.02]`}
+                className={`${value.bgColor} rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between min-h-[320px]`}
               >
                 <div className="flex justify-center mb-8 text-foreground/80">
                   <value.icon className="w-32 h-32" strokeWidth={1} />
