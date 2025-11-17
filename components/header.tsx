@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown } from 'lucide-react'
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname } from 'next/navigation'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -46,6 +46,13 @@ export function Header() {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8 items-center">
+            <Link
+              href="/solutions"
+              className="text-sm font-medium text-foreground hover:text-secondary transition"
+            >
+              Solutions
+            </Link>
+
             <div
               className="relative"
               onMouseEnter={() => setOpenDropdown("community")}
@@ -195,6 +202,13 @@ export function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <nav className="md:hidden pb-4 space-y-4 px-4">
+            <Link
+              href="/solutions"
+              className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+            >
+              Solutions
+            </Link>
+
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Community</p>
               <Link
