@@ -111,21 +111,21 @@ export function Header() {
                   <div className="bg-background border border-border rounded-xl shadow-lg py-4 px-2">
                     <div className="space-y-1">
                       <Link
-                        href={getLink("/about", "about")}
+                        href={getLink("/", "about")}
                         onClick={(e) => handleAnchorClick(e, "about")}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
                       >
                         About AGIVC
                       </Link>
                       <Link
-                        href={getLink("/about", "mission")}
+                        href={getLink("/", "mission")}
                         onClick={(e) => handleAnchorClick(e, "mission")}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
                       >
                         Mission & Values
                       </Link>
                       <Link
-                        href={getLink("/about", "team")}
+                        href={getLink("/", "team")}
                         onClick={(e) => handleAnchorClick(e, "team")}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
                       >
@@ -234,21 +234,21 @@ export function Header() {
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">About</p>
               <Link
-                href={getLink("/about", "about")}
+                href={getLink("/", "about")}
                 onClick={(e) => handleAnchorClick(e, "about")}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 About AGIVC
               </Link>
               <Link
-                href={getLink("/about", "mission")}
+                href={getLink("/", "mission")}
                 onClick={(e) => handleAnchorClick(e, "mission")}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Mission & Values
               </Link>
               <Link
-                href={getLink("/about", "team")}
+                href={getLink("/", "team")}
                 onClick={(e) => handleAnchorClick(e, "team")}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >

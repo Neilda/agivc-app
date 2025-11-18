@@ -22,6 +22,12 @@ export function TeamAndPartners() {
       linkedin: "https://www.linkedin.com/in/wilson-li-cpa-ca-a79a103b/",
       image: "/headshots/wilson-li.jpeg",
     },
+    {
+      name: "Rami Alhamad",
+      role: "Investor / Advisor",
+      linkedin: "https://www.linkedin.com/in/ramialhamad",
+      image: "/headshots/rami.png",
+    },
   ];
 
   return (

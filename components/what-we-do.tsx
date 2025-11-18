@@ -3,7 +3,7 @@ export function WhatWeDo() {
     {
       title: "Forward Deployed",
       description:
-        "We build agentic AI solutions and training employees for companies ranging from startups to Fortune 50.",
+        "We build agentic AI solutions and training employees for companies ranging from startups to Fortune 500.",
     },
     {
       title: "Events & community",
