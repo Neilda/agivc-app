@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from 'lucide-react'
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function SolutionsHero() {
   return (
@@ -8,21 +8,27 @@ export function SolutionsHero() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr,1fr] gap-16 items-start mb-16">
           <div>
-            <div className="text-primary font-medium mb-4 text-lg">Forward Deployed</div>
+            <div className="text-primary font-medium mb-4 text-lg">
+              Forward Deployed Solutions
+            </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Ship AI that works
             </h1>
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed">
-              We build production-ready AI systems that integrate seamlessly into your workflow. From knowledge retrieval to intelligent agents, we ship fast and iterate based on real results.
+              We build production-ready AI systems, train your teams, and
+              develop AI champions who drive transformation.
             </p>
             <Link
               href="mailto:info@agiventures.ca"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium mt-8 group"
             >
               Get Started
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </Link>
           </div>
         </div>
@@ -38,5 +44,5 @@ export function SolutionsHero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
