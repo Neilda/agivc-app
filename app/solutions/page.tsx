@@ -2,7 +2,6 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SolutionsHero } from "@/components/solutions-hero"
 import { SolutionsCapabilities } from "@/components/solutions-capabilities"
-import { SolutionsProcess } from "@/components/solutions-process"
 import { SolutionsCTA } from "@/components/solutions-cta"
 
 export const metadata = {
@@ -18,7 +17,6 @@ export default function SolutionsPage() {
       <main>
         <SolutionsHero />
         <SolutionsCapabilities />
-        <SolutionsProcess />
         <SolutionsCTA />
       </main>
       <Footer />

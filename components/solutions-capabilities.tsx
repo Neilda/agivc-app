@@ -32,11 +32,32 @@ export function SolutionsCapabilities() {
         </div>
       </div>
 
-      {/* Section 02 - Knowledge Systems */}
+      {/* Section 02 - Agents and Agentic Workflows */}
       <div className="py-24 md:py-32 px-4 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-8">
             02
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Agents and agentic workflows
+              </h3>
+            </div>
+            <div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Most vendors don't understand the difference between workflows and agents. We do. Workflows follow predefined paths—perfect for predictable tasks. Agents make their own decisions—ideal when you need flexibility. We choose the right approach for your specific needs, not what's easiest to sell.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Section 03 - Knowledge Systems */}
+      <div className="py-24 md:py-32 px-4 border-b border-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-8">
+            03
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -55,11 +76,11 @@ export function SolutionsCapabilities() {
         </div>
       </div>
 
-      {/* Section 03 - Support Triage */}
+      {/* Section 04 - Support Triage */}
       <div className="py-24 md:py-32 px-4 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-8">
-            03
+            04
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -78,11 +99,11 @@ export function SolutionsCapabilities() {
         </div>
       </div>
 
-      {/* Section 04 - GTM Automation */}
+      {/* Section 05 - GTM Automation */}
       <div className="py-24 md:py-32 px-4 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-8">
-            04
+            05
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -101,11 +122,11 @@ export function SolutionsCapabilities() {
         </div>
       </div>
 
-      {/* Section 05 - Evaluation */}
+      {/* Section 06 - Evaluation */}
       <div className="py-24 md:py-32 px-4 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-8">
-            05
+            06
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -124,13 +145,13 @@ export function SolutionsCapabilities() {
         </div>
       </div>
 
-      {/* Section 06 - Training */}
+      {/* Section 07 - Training */}
       <div className="py-24 md:py-32 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
               <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-4">
-                06
+                07
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Training that transforms teams
@@ -226,13 +247,13 @@ export function SolutionsCapabilities() {
         </div>
       </div>
 
-      {/* Section 07 - AI Champion Training */}
+      {/* Section 08 - AI Champion Training */}
       <div className="py-24 md:py-32 px-4 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             <div>
               <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-4">
-                07
+                08
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Build your AI champions
