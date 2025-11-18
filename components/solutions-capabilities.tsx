@@ -29,6 +29,11 @@ export function SolutionsCapabilities() {
               </p>
             </div>
           </div>
+          <div className="mt-12">
+            <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl">
+              Every business we work with—whether building solutions, training teams, or developing AI champions—gains access to our exclusive community of AI practitioners. Connect with peers, share best practices, and stay ahead of the latest developments in AI.
+            </p>
+          </div>
         </div>
       </div>
 

@@ -31,7 +31,7 @@ export function WhatWeDo() {
             <Link
               key={index}
               href={service.href}
-              className="p-6 bg-background rounded-3xl border border-border hover:shadow-lg transition cursor-pointer"
+              className="group relative p-6 bg-background rounded-3xl border border-border hover:shadow-lg transition cursor-pointer"
             >
               <h3 className="text-xl font-bold mb-3 text-foreground">
                 {service.title}
@@ -39,6 +39,9 @@ export function WhatWeDo() {
               <p className="text-foreground/70 leading-relaxed">
                 {service.description}
               </p>
+              <span className="absolute top-6 right-6 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                Enter
+              </span>
             </Link>
           ))}
         </div>
