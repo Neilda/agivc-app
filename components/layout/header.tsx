@@ -113,21 +113,21 @@ export function Header() {
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
                         <Link href="/solutions#building-ai-solutions" onClick={(e) => handleSolutionsAnchorClick(e, "building-ai-solutions")}>
-                          Building AI solutions
+                          Building AI Solutions
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
                         <Link href="/solutions#training-your-team" onClick={(e) => handleSolutionsAnchorClick(e, "training-your-team")}>
-                          Training your team
+                          Training Your Team
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
                         <Link href="/solutions#ai-champion-program" onClick={(e) => handleSolutionsAnchorClick(e, "ai-champion-program")}>
-                          AI Champion program
+                          AI Champion Program
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -199,7 +199,7 @@ export function Header() {
                     <li>
                       <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
                         <Link href="/sponsor">
-                          Become a Sponsor
+                          Become A Sponsor
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -242,7 +242,7 @@ export function Header() {
                 }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
-                Building AI solutions
+                Building AI Solutions
               </Link>
               <Link
                 href="/solutions#training-your-team"
@@ -252,7 +252,7 @@ export function Header() {
                 }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
-                Training your team
+                Training Your Team
               </Link>
               <Link
                 href="/solutions#ai-champion-program"
@@ -262,7 +262,7 @@ export function Header() {
                 }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
-                AI Champion program
+                AI Champion Program
               </Link>
             </div>
             <Link
@@ -317,7 +317,7 @@ export function Header() {
                 onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
-                Become a Sponsor
+                Become A Sponsor
               </Link>
               <Link
                 href="/accelerator"
