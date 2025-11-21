@@ -31,8 +31,8 @@ export default function TeamPage() {
             </div>
           </div>
         </section>
-        <TeamHero />
         <MissionValues />
+        <TeamHero />
         <TeamGrid />
       </main>
       <Footer />

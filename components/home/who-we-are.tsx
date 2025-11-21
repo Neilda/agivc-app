@@ -8,12 +8,12 @@ export function WhoWeAre() {
       description="We started as Canada's first AI Tinkerers chapter, growing from 30 to 1500 builders. Today, we're still a community—renamed AGIVC to provide solutions, accelerator programs, and investments."
       media={{
         type: "image",
-        src: "/team-collaborating-on-ai-project-with-modern-techn.jpg",
+        src: "/team/table-laptop-small-team.JPG",
         alt: "Team collaborating"
       }}
       cta={{
-        text: "Meet the team",
-        href: "/#about"
+        text: "Learn more",
+        href: "/team"
       }}
       align="right"
       background="muted"
