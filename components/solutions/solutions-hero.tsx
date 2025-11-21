@@ -12,7 +12,7 @@ export function SolutionsHero() {
               Forward Deployed Solutions
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-              Ship AI that works
+              Build, train, and transform
             </h1>
           </div>
           <div className="flex flex-col justify-center">

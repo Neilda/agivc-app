@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from 'next/navigation'
 
 export function Header() {
@@ -41,7 +42,13 @@ export function Header() {
       <div className="mx-auto max-w-[1400px]">
         <div className="relative flex items-center justify-between h-16 px-4">
           <Link href="/" className="flex-shrink-0 z-10">
-            <h1 className="text-xl font-bold text-foreground">AGIVC</h1>
+            <Image
+              src="/logos/agivc-logo-nov-25-light.png"
+              alt="AGIVC"
+              width={400}
+              height={133}
+              className="h-20 w-auto"
+            />
           </Link>
 
           {/* Desktop Menu - Centered */}

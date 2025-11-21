@@ -1,5 +1,6 @@
 import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,7 +8,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4">AGIVC</h3>
+            <Image
+              src="/logos/agivc-logo-nov-25-dark.png"
+              alt="AGIVC"
+              width={400}
+              height={133}
+              className="h-24 w-auto mb-4"
+            />
             <p className="text-sm text-primary-foreground/70">
               Think in decades. Ship this weekend.
             </p>
@@ -17,7 +24,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href="/#about"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition"
                 >
                   About
@@ -62,7 +69,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/events"
+                  href="/#events"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition"
                 >
                   Events

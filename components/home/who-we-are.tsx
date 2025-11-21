@@ -13,7 +13,7 @@ export function WhoWeAre() {
       }}
       cta={{
         text: "Meet the team",
-        href: "/about"
+        href: "/#about"
       }}
       align="right"
       background="muted"
