@@ -2,7 +2,7 @@ import { Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-export function TeamAndPartners() {
+export function TeamGrid() {
   const team = [
     {
       name: "Hai Nghiem",
@@ -31,11 +31,8 @@ export function TeamAndPartners() {
   ];
 
   return (
-    <section id="team" className="py-32 md:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section className="py-32 md:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-[1400px] mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-foreground mb-12 text-center">
-          Team
-        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
             <div
@@ -84,3 +81,4 @@ export function TeamAndPartners() {
     </section>
   );
 }
+

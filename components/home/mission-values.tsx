@@ -50,7 +50,7 @@ export function MissionValues() {
           </div>
           <div className="space-y-6 text-lg sm:text-xl text-muted-foreground leading-relaxed">
             <p>
-              We partner with exceptional AI and robotics founders to accelerate their journey from idea to impact.
+              We partner with exceptional AI founders to accelerate their journey from idea to impact.
             </p>
             <p>
               Through capital, community, and strategic mentorship, we help shape the future of Canadian innovation.

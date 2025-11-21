@@ -112,8 +112,8 @@ export function Header() {
                     </li>
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href={getLink("/", "team")} onClick={(e) => handleAnchorClick(e, "team")}>
-                          Team & Partners
+                        <Link href="/team">
+                          Team
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -237,14 +237,11 @@ export function Header() {
                 Mission & Values
               </Link>
               <Link
-                href={getLink("/", "team")}
-                onClick={(e) => {
-                  handleAnchorClick(e, "team")
-                  setIsOpen(false)
-                }}
+                href="/team"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
-                Team & Partners
+                Team
               </Link>
               <Link
                 href="/press-kit"
