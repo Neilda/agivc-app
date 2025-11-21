@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "AGI Ventures Canada",
     images: [
       {
-        url: "/team/group-photo-vibe-hack.JPG",
+        url: "/team/table-laptop-mid-size-team.JPG",
         width: 1200,
         height: 630,
         alt: "AGI Ventures Canada Landing Page",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
     description:
       "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
-    images: ["/team/group-photo-vibe-hack.JPG"],
+    images: ["/team/table-laptop-mid-size-team.JPG"],
   },
 };
 
