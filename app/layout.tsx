@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   description:
     "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
   generator: "Next.js",
+  icons: {
+    icon: "/AGIVC-ico.png",
+    shortcut: "/AGIVC-ico.png",
+    apple: "/AGIVC-ico.png",
+  },
   openGraph: {
     title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
     description:
