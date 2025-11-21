@@ -17,20 +17,20 @@ const _geistMono = V0_Font_Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agivc.ca"),
+  metadataBase: new URL("https://agiventures.ca"),
   title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
   description:
-    "AGI Ventures Canada backs Canadian AI and robotics founders with capital, community, and industry partners to go from idea to impact.",
-  generator: "v0.app",
+    "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
+  generator: "Next.js",
   openGraph: {
     title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
     description:
-      "AGI Ventures Canada backs Canadian AI and robotics founders with capital, community, and industry partners to go from idea to impact.",
-    url: "https://agivc.ca",
+      "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
+    url: "https://agiventures.ca",
     siteName: "AGI Ventures Canada",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/team/group-photo-vibe-hack.JPG",
         width: 1200,
         height: 630,
         alt: "AGI Ventures Canada Landing Page",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
     description:
-      "AGI Ventures Canada backs Canadian AI and robotics founders with capital, community, and industry partners.",
-    images: ["/og-image.jpg"],
+      "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
+    images: ["/team/group-photo-vibe-hack.JPG"],
   },
 }
 
