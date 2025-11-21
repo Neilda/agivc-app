@@ -44,12 +44,14 @@ export function SectionWithMedia({
   return (
     <section id={id} className={cn(
       "py-16 md:py-20 lg:py-24 overflow-hidden",
-      background === "muted" && "bg-muted/30",
-      background === "subtle" && "bg-muted/10",
       className
     )}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 items-center min-h-[500px] lg:min-h-[600px]">
+        <div className={cn(
+          "grid lg:grid-cols-12 gap-4 lg:gap-8 items-center min-h-[500px] lg:min-h-[600px]",
+          background === "muted" && "bg-muted/30 rounded-[4px] p-8 lg:p-12",
+          background === "subtle" && "bg-muted/10 rounded-[4px] p-8 lg:p-12"
+        )}>
           
           {/* Text Content */}
           <div className={cn(
