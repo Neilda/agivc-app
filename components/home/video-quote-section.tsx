@@ -4,7 +4,7 @@ import Image from "next/image";
 export function VideoQuoteSection() {
   return (
     <SectionWithMedia
-      title="We don't live in SF, but we have SF ties"
+      title="We make it feel like SF"
       description="No matter where you are, if you ship great work, we will find you. Location doesn't limit your potential—what you build does."
       media={{
         type: "video",
