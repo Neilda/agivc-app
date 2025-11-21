@@ -20,7 +20,7 @@ When creating cursor rules for components, create a `.cursor/` folder inside the
 
 ## Commit Message Style
 
-All commit messages must follow the Angular commit message convention (Conventional Commits). Use the following format:
+All commit messages must follow the Conventional Commits specification. Use the following format:
 
 ```
 <type>(<scope>): <subject>
