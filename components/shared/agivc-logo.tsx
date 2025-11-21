@@ -8,9 +8,10 @@ interface AgivcLogoProps {
   className?: string
   width?: number
   height?: number
+  showWordmark?: boolean
 }
 
-export function AgivcLogo({ mode = "auto", className = "", width = 400, height = 133 }: AgivcLogoProps) {
+export function AgivcLogo({ mode = "auto", className = "", width = 400, height = 133, showWordmark = false }: AgivcLogoProps) {
   const [mounted, setMounted] = useState(false)
   const [logoMode, setLogoMode] = useState<"light" | "dark">(
     mode === "light" || mode === "dark" ? mode : "light"
@@ -42,8 +43,9 @@ export function AgivcLogo({ mode = "auto", className = "", width = 400, height =
   const containerClassName = useMemo(() => {
     const base = "relative inline-flex items-center"
     const groupClass = "group"
-    return [base, groupClass, className].filter(Boolean).join(" ")
-  }, [className])
+    const scrolledClass = showWordmark ? "scrolled" : ""
+    return [base, groupClass, scrolledClass, className].filter(Boolean).join(" ")
+  }, [className, showWordmark])
 
   if (!mounted && mode === "auto") {
     return (
@@ -76,7 +78,7 @@ export function AgivcLogo({ mode = "auto", className = "", width = 400, height =
         alt="AGIVC Wordmark"
         width={width}
         height={height}
-        className="agivc-logo-wordmark absolute top-1/2 left-0 -translate-y-1/2 h-full w-auto origin-left scale-150"
+        className="agivc-logo-wordmark absolute top-1/2 left-0 -translate-y-1/2 h-full w-auto origin-left scale-[1.8]"
       />
     </div>
   )

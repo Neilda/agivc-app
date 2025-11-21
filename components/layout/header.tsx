@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from 'lucide-react'
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
@@ -16,8 +16,20 @@ import {
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const isHomePage = pathname === "/"
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   const dropdownLinkClass =
     "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0"
 
@@ -51,7 +63,7 @@ export function Header() {
       <div className="mx-auto max-w-[1400px]">
         <div className="relative flex items-center justify-between h-16 px-4">
           <Link href="/" className="flex-shrink-0 z-10">
-            <AgivcLogo mode="light" className="h-20 w-auto" />
+            <AgivcLogo mode="light" className="h-20 w-auto" showWordmark={isScrolled} />
           </Link>
 
           {/* Desktop Menu - Centered */}
