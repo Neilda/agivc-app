@@ -7,6 +7,7 @@ import { SponsorLogos } from "@/components/sponsor/sponsor-logos";
 import { SponsorPrograms } from "@/components/sponsor/sponsor-programs";
 import { SponsorSocialProof } from "@/components/sponsor/sponsor-social-proof";
 import { SponsorInterestCTA } from "@/components/sponsor/sponsor-interest-cta";
+import { SponsorSuccessStories } from "@/components/sponsor/sponsor-success-stories";
 
 export const metadata = {
   title: "Become a Sponsor | AGIVC",
@@ -23,6 +24,7 @@ export default function SponsorPage() {
       <SponsorAudience />
       <SponsorLogos />
       <SponsorPrograms />
+      <SponsorSuccessStories />
       {/* <SponsorSocialProof /> */}
       <SponsorInterestCTA />
       <Footer />

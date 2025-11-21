@@ -7,7 +7,7 @@ export function AIAcceleratorSection() {
       description="A 6-week intensive program, with 2.5 weeks spent in San Francisco. We invest alongside our VC partners at the end of the program to help you launch and scale your AI startup."
       media={{
         type: "image",
-        src: "/ai-accelerator-program-illustration-with-founders-.jpg",
+        src: "/logos/organizers-posed-photo.jpg",
         alt: "AI Accelerator"
       }}
       cta={{

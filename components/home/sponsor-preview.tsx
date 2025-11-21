@@ -3,16 +3,16 @@ import { SectionWithMedia } from "@/components/sections/section-with-media"
 export function SponsorPreview() {
   return (
     <SectionWithMedia
-      title="For Sponsors"
-      description="Partner with us to gain exclusive access to Canada's top AI founders. Sponsors receive premium placement in our community, featuring opportunities, early product access, and long-term strategic benefits."
+      title="You can sponsor us"
+      description="Sponsor our events, newsletters, and hackathons. Test your AI products with our developer community and reach your target audience—whether you're looking to connect with developers, executives, or public sector leaders."
       media={{
         type: "image",
-        src: "/abstract-illustration-of-ai-technology-and-innovat.jpg",
+        src: "/sponsors/solace-booth.JPG",
         alt: "Sponsorship Benefits"
       }}
       cta={{
-        text: "Become a Sponsor",
-        href: "/sponsor"
+        text: "Sponsor success stories",
+        href: "/sponsor#success-stories"
       }}
       align="right"
       background="subtle"

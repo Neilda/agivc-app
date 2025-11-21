@@ -6,6 +6,7 @@ import { ForwardDeployedSection } from "@/components/home/forward-deployed-secti
 import { EventsCommunitySection } from "@/components/home/events-community-section";
 import { AIAcceleratorSection } from "@/components/home/ai-accelerator-section";
 import { SponsorPreview } from "@/components/home/sponsor-preview";
+import { ReadyToSponsor } from "@/components/home/ready-to-sponsor";
 import { VideoQuoteSection } from "@/components/home/video-quote-section";
 import { UpcomingEvents } from "@/components/home/upcoming-events";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <AIAcceleratorSection />
       <VideoQuoteSection />
       <SponsorPreview />
+      <ReadyToSponsor />
       <UpcomingEvents />
       <Footer />
     </main>
