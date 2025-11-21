@@ -1,6 +1,6 @@
 export function UpcomingEvents() {
   return (
-    <section id="events" className="py-32 md:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="events" className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-[1400px] mx-auto">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-foreground mb-12 text-center">
           Upcoming Events

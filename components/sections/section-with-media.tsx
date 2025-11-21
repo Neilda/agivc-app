@@ -43,7 +43,7 @@ export function SectionWithMedia({
 }: SectionWithMediaProps) {
   return (
     <section id={id} className={cn(
-      "py-32 md:py-40 lg:py-48 overflow-hidden",
+      "py-16 md:py-20 lg:py-24 overflow-hidden",
       background === "muted" && "bg-muted/30",
       background === "subtle" && "bg-muted/10",
       className
