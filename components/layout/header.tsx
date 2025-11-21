@@ -138,33 +138,28 @@ export function Header() {
           <NavigationMenu viewport={false} className="hidden md:flex z-10">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger variant="primary">
+                <NavigationMenuTrigger variant="primary" className="rounded-full px-6 h-10 text-sm font-semibold">
                   Start here
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-4 p-4">
                     <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/sponsor" className="whitespace-nowrap">
+                      <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
+                        <Link href="/sponsor">
                           Become a Sponsor
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="/accelerator" className="whitespace-nowrap">
+                      <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
+                        <Link href="/accelerator">
                           Apply for Accelerator
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink asChild>
-                        <a
-                          href="https://discord.gg/6M45X7ySUc"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="whitespace-nowrap"
-                        >
+                      <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
+                        <a href="https://discord.gg/6M45X7ySUc" target="_blank" rel="noopener noreferrer">
                           Join Discord
                         </a>
                       </NavigationMenuLink>

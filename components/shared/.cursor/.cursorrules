@@ -1,0 +1,55 @@
+# AGIVC Logo Component Rules
+
+## Component Location
+
+- File: `components/shared/agivc-logo.tsx`
+- This is a reusable logo component used throughout the application
+
+## Usage Guidelines
+
+### Props
+
+- `mode`: Optional prop that can be `"light"`, `"dark"`, or `"auto"` (default: `"auto"`)
+  - `"light"`: Forces light logo variant
+  - `"dark"`: Forces dark logo variant
+  - `"auto"`: Automatically detects theme from page's dark class
+- `className`: Optional CSS classes for styling
+- `width`: Optional width prop (default: 400)
+- `height`: Optional height prop (default: 133)
+
+### Logo Files
+
+- Logo files are located in `/public/logos/`
+- Standard logo: `agivc-logo-nov-25-{light|dark}.png`
+- Wordmark logo: `agivc-wordmark-nov-25-{light|dark}.png`
+- Always use dash-case naming convention for logo files
+
+### Animation Behavior
+
+- The component includes a hover animation that wipes from logo to wordmark
+- Animation CSS is defined in `app/globals.css` with class `.agivc-logo-group`
+- Animation timing: 0.15s duration with sequential transitions
+- On hover: Logo disappears first, then wordmark appears (0.15s delay)
+- On hover out: Wordmark disappears first, then logo appears (0.15s delay)
+- Wordmark is displayed at 150% scale (`scale-150`)
+
+### Implementation Notes
+
+- Component is client-side only (`"use client"`)
+- Uses `MutationObserver` to detect theme changes when `mode="auto"`
+- Handles SSR by showing light logo during initial render when `mode="auto"`
+- Logo and wordmark images are absolutely positioned for overlay effect
+
+### When to Use
+
+- Use `<AgivcLogo />` in header, footer, or anywhere the AGIVC logo is needed
+- Use `mode="light"` for light backgrounds (e.g., header)
+- Use `mode="dark"` for dark backgrounds (e.g., footer)
+- Use `mode="auto"` when logo should adapt to page theme
+
+### Do Not
+
+- Do not import logo images directly - always use this component
+- Do not modify the animation timing without updating both CSS and component
+- Do not change logo file paths without updating this component
+- Do not remove the `agivc-logo-group` class as it's required for animations
