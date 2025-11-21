@@ -55,9 +55,9 @@ Use one of the following types:
 ### Examples
 
 ```
-feat(header): add Accelerator menu item
-fix(solutions): correct anchor scrolling behavior
-refactor(home): reduce section spacing
-style(header): remove frosted background effect
-docs(readme): update installation instructions
+feat: add Accelerator menu item
+fix: correct anchor scrolling behavior
+refactor: reduce section spacing
+style: remove frosted background effect
+docs: update installation instructions
 ```
