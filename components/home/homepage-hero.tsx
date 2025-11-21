@@ -32,7 +32,7 @@ export function HomepageHero() {
             src="/home/DSCF5379.png"
             alt="AGIVC Team"
             fill
-            className="object-cover opacity-90"
+            className="object-cover opacity-90 rounded-[4px]"
             priority
           />
         </div>

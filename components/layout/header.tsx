@@ -141,7 +141,7 @@ export function Header() {
                 <NavigationMenuTrigger variant="primary" className="rounded-full px-6 h-10 text-sm font-semibold">
                   Start here
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="right-0 left-auto">
                   <ul className="grid w-[200px] gap-4 p-4">
                     <li>
                       <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>

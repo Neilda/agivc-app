@@ -25,7 +25,7 @@ export function VideoQuoteSection() {
               src="/headshots/lee-rob.png"
               alt="Lee Robinson"
               fill
-              className="object-cover"
+              className="object-cover rounded-[4px]"
             />
           </div>
           <div>

@@ -7,7 +7,6 @@ import { EventsCommunitySection } from "@/components/home/events-community-secti
 import { AIAcceleratorSection } from "@/components/home/ai-accelerator-section";
 import { SponsorPreview } from "@/components/home/sponsor-preview";
 import { VideoQuoteSection } from "@/components/home/video-quote-section";
-import { MissionValues } from "@/components/home/mission-values";
 import { UpcomingEvents } from "@/components/home/upcoming-events";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
       <AIAcceleratorSection />
       <VideoQuoteSection />
       <SponsorPreview />
-      <MissionValues />
       <UpcomingEvents />
       <Footer />
     </main>

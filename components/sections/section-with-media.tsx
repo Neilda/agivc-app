@@ -87,7 +87,7 @@ export function SectionWithMedia({
                   src={media.src}
                   alt={media.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-[4px]"
                 />
               </>
             )}

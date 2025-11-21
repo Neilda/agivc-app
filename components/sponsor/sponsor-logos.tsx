@@ -30,7 +30,7 @@ export function SponsorLogos() {
                       src={logo.src}
                       alt={logo.name}
                       fill
-                      className="object-contain"
+                      className="object-contain rounded-[4px]"
                     />
                   </div>
                 </div>

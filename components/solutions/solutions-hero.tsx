@@ -35,10 +35,10 @@ export function SolutionsHero() {
 
         <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden">
           <Image
-            src="/team-collaborating-on-ai-project-with-modern-techn.jpg"
+            src="/team/table-laptop-mid-size-team.JPG"
             alt="AI Solutions"
             fill
-            className="object-cover"
+            className="object-cover rounded-[4px]"
             priority
           />
         </div>
