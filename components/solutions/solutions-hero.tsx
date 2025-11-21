@@ -12,7 +12,7 @@ export function SolutionsHero() {
               Forward Deployed Solutions
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-              From Fortune 500 to startups
+              We work with companies from Fortune 500 to startups
             </h1>
           </div>
           <div className="flex flex-col justify-center">
