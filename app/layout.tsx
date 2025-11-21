@@ -1,20 +1,23 @@
-import type React from "react"
-import type { Metadata } from "next"
+import type React from "react";
+import type { Metadata } from "next";
 
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { Exo_2 as V0_Font_Exo_2, Geist_Mono as V0_Font_Geist_Mono } from "next/font/google"
-import { ScrollToTop } from "@/components/layout/scroll-to-top"
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import {
+  Exo_2 as V0_Font_Exo_2,
+  Geist_Mono as V0_Font_Geist_Mono,
+} from "next/font/google";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 
 // Initialize fonts
 const _exo_2 = V0_Font_Exo_2({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-})
+});
 const _geistMono = V0_Font_Geist_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://agiventures.ca"),
@@ -45,12 +48,12 @@ export const metadata: Metadata = {
       "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
     images: ["/team/group-photo-vibe-hack.JPG"],
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -60,5 +63,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
