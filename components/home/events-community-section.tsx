@@ -7,7 +7,7 @@ export function EventsCommunitySection() {
       description="Our largest hackathons have 400 attendees and are usually held at Invest Ottawa. We also run meetups and conferences, and work with sponsors like LangChain, Tavily, Vercel, and Solace to foster the AI ecosystem."
       media={{
         type: "image",
-        src: "/home/DSCF5379.png",
+        src: "/hackathon-crowd-with-laptop.JPG",
         alt: "Community Event"
       }}
       cta={{
