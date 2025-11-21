@@ -38,14 +38,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="mx-auto">
-        <div className="flex justify-between items-center h-16 px-4">
-          <Link href="/" className="flex-shrink-0">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="relative flex items-center justify-between h-16 px-4">
+          <Link href="/" className="flex-shrink-0 z-10">
             <h1 className="text-xl font-bold text-foreground">AGIVC</h1>
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex gap-8 items-center">
+          {/* Desktop Menu - Centered */}
+          <nav className="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
             <Link
               href="/solutions"
               className="text-sm font-medium text-foreground hover:text-secondary transition"
@@ -70,7 +70,7 @@ export function Header() {
                   <div className="bg-background border border-border rounded-xl shadow-lg py-4 px-2">
                     <div className="space-y-1">
                       <Link
-                        href={getLink("/events", "events")}
+                        href={getLink("/", "events")}
                         onClick={(e) => handleAnchorClick(e, "events")}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
                       >
@@ -149,9 +149,12 @@ export function Header() {
             >
               Sponsor
             </Link>
+          </nav>
 
+          {/* Desktop CTA Button - Right Side */}
+          <div className="hidden md:flex items-center gap-4 z-10">
             <div
-              className="relative py-4 -my-4"
+              className="relative"
               onMouseEnter={() => setOpenDropdown("start")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
@@ -191,10 +194,10 @@ export function Header() {
                 </div>
               )}
             </div>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2" aria-label="Toggle menu">
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 z-10" aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -204,6 +207,7 @@ export function Header() {
           <nav className="md:hidden pb-4 space-y-4 px-4">
             <Link
               href="/solutions"
+              onClick={() => setIsOpen(false)}
               className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
             >
               Solutions
@@ -212,20 +216,25 @@ export function Header() {
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Community</p>
               <Link
-                href={getLink("/events", "events")}
-                onClick={(e) => handleAnchorClick(e, "events")}
+                href={getLink("/", "events")}
+                onClick={(e) => {
+                  handleAnchorClick(e, "events")
+                  setIsOpen(false)
+                }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Events
               </Link>
               <Link
                 href="/directory"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Founders Directory
               </Link>
               <Link
                 href="/success-stories"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Success Stories
@@ -235,27 +244,37 @@ export function Header() {
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">About</p>
               <Link
                 href={getLink("/", "about")}
-                onClick={(e) => handleAnchorClick(e, "about")}
+                onClick={(e) => {
+                  handleAnchorClick(e, "about")
+                  setIsOpen(false)
+                }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 About AGIVC
               </Link>
               <Link
                 href={getLink("/", "mission")}
-                onClick={(e) => handleAnchorClick(e, "mission")}
+                onClick={(e) => {
+                  handleAnchorClick(e, "mission")
+                  setIsOpen(false)
+                }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Mission & Values
               </Link>
               <Link
                 href={getLink("/", "team")}
-                onClick={(e) => handleAnchorClick(e, "team")}
+                onClick={(e) => {
+                  handleAnchorClick(e, "team")
+                  setIsOpen(false)
+                }}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Team & Partners
               </Link>
               <Link
                 href="/press-kit"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Press Kit
@@ -263,6 +282,7 @@ export function Header() {
             </div>
             <Link
               href="/sponsor"
+              onClick={() => setIsOpen(false)}
               className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
             >
               Sponsor
@@ -271,12 +291,14 @@ export function Header() {
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Start here</p>
               <Link
                 href="/sponsor"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Become a Sponsor
               </Link>
               <Link
                 href="/accelerator"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Apply for Accelerator
@@ -285,6 +307,7 @@ export function Header() {
                 href="https://discord.gg/6M45X7ySUc"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Join Discord

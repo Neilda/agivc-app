@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Exo_2 as V0_Font_Exo_2, Geist_Mono as V0_Font_Geist_Mono } from "next/font/google"
-import { ScrollToTop } from "@/components/scroll-to-top"
+import { ScrollToTop } from "@/components/layout/scroll-to-top"
 
 // Initialize fonts
 const _exo_2 = V0_Font_Exo_2({

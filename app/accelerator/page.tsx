@@ -1,11 +1,11 @@
-import { AcceleratorHero } from "@/components/accelerator-hero"
-import { ProgramOverview } from "@/components/program-overview"
-import { ProgramBenefits } from "@/components/program-benefits"
-import { BatchSchedule } from "@/components/batch-schedule"
-import { AcceleratorCTA } from "@/components/accelerator-cta"
-import { Footer } from "@/components/footer"
-import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
-import { Header } from "@/components/header"
+import { AcceleratorHero } from "@/components/accelerator/accelerator-hero"
+import { ProgramOverview } from "@/components/accelerator/program-overview"
+import { ProgramBenefits } from "@/components/accelerator/program-benefits"
+import { BatchSchedule } from "@/components/accelerator/batch-schedule"
+import { AcceleratorCTA } from "@/components/accelerator/accelerator-cta"
+import { Footer } from "@/components/layout/footer"
+import { ComingSoonOverlay } from "@/components/shared/coming-soon-overlay"
+import { Header } from "@/components/layout/header"
 
 export default function AcceleratorPage() {
   return (

@@ -1,8 +1,8 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { SuccessStoriesHero } from "@/components/success-stories-hero"
-import { CaseStudiesGrid } from "@/components/case-studies-grid"
-import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { SuccessStoriesHero } from "@/components/success-stories/success-stories-hero"
+import { CaseStudiesGrid } from "@/components/success-stories/case-studies-grid"
+import { ComingSoonOverlay } from "@/components/shared/coming-soon-overlay"
 
 export const metadata = {
   title: "Success Stories | AI Canada Fund",

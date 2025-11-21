@@ -1,15 +1,17 @@
 "use client"
 
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { HomepageHero } from "@/components/homepage-hero"
-import { WhoWeAre } from "@/components/who-we-are"
-import { WhatWeDo } from "@/components/what-we-do"
-import { SponsorPreview } from "@/components/sponsor-preview"
-import { VideoQuoteSection } from "@/components/video-quote-section"
-import { MissionValues } from "@/components/mission-values"
-import { TeamAndPartners } from "@/components/team-and-partners"
-import { UpcomingEvents } from "@/components/upcoming-events"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { HomepageHero } from "@/components/home/homepage-hero"
+import { WhoWeAre } from "@/components/home/who-we-are"
+import { ForwardDeployedSection } from "@/components/home/forward-deployed-section"
+import { EventsCommunitySection } from "@/components/home/events-community-section"
+import { AIAcceleratorSection } from "@/components/home/ai-accelerator-section"
+import { SponsorPreview } from "@/components/home/sponsor-preview"
+import { VideoQuoteSection } from "@/components/home/video-quote-section"
+import { MissionValues } from "@/components/home/mission-values"
+import { TeamAndPartners } from "@/components/home/team-and-partners"
+import { UpcomingEvents } from "@/components/home/upcoming-events"
 
 export default function Home() {
   return (
@@ -17,11 +19,13 @@ export default function Home() {
       <Header />
       <HomepageHero />
       <WhoWeAre />
-      <WhatWeDo />
+      <ForwardDeployedSection />
+      <EventsCommunitySection />
+      <AIAcceleratorSection />
       <VideoQuoteSection />
+      <SponsorPreview />
       <MissionValues />
       <TeamAndPartners />
-      <SponsorPreview />
       <UpcomingEvents />
       <Footer />
     </main>

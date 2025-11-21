@@ -1,9 +1,9 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { DirectoryHero } from "@/components/directory-hero"
-import { DirectoryOverview } from "@/components/directory-overview"
-import { DirectoryFilters } from "@/components/directory-filters"
-import { ComingSoonOverlay } from "@/components/coming-soon-overlay"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { DirectoryHero } from "@/components/directory/directory-hero"
+import { DirectoryOverview } from "@/components/directory/directory-overview"
+import { DirectoryFilters } from "@/components/directory/directory-filters"
+import { ComingSoonOverlay } from "@/components/shared/coming-soon-overlay"
 
 export const metadata = {
   title: "Founders Directory | AI Canada Fund",

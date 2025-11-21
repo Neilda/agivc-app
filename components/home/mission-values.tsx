@@ -42,36 +42,36 @@ export function MissionValues() {
   ]
 
   return (
-    <section id="mission" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 mb-24">
+    <section id="mission" className="py-32 md:py-40 lg:py-48 px-4 sm:px-6 lg:px-8 bg-muted/20">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 mb-32 items-start">
           <div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">Our Mission</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-foreground mb-6">Our Mission</h2>
           </div>
-          <div className="space-y-6">
-            <p className="text-lg text-foreground/80 leading-relaxed">
+          <div className="space-y-6 text-lg sm:text-xl text-muted-foreground leading-relaxed">
+            <p>
               We partner with exceptional AI and robotics founders to accelerate their journey from idea to impact.
             </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p>
               Through capital, community, and strategic mentorship, we help shape the future of Canadian innovation.
             </p>
           </div>
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-12 text-foreground">Values</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight mb-12 text-foreground">Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => (
               <div
                 key={index}
-                className={`${value.bgColor} rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between min-h-[320px]`}
+                className={`${value.bgColor} rounded-2xl p-8 sm:p-10 flex flex-col justify-between min-h-[320px] transition-transform hover:-translate-y-1 duration-300`}
               >
                 <div className="flex justify-center mb-8 text-foreground/80">
-                  <value.icon className="w-32 h-32" strokeWidth={1} />
+                  <value.icon className="w-24 h-24 sm:w-32 sm:h-32" strokeWidth={1} />
                 </div>
                 <div className="space-y-3">
                   <h3 className="text-xl font-bold text-foreground">{value.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed text-sm">{value.description}</p>
+                  <p className="text-foreground/70 leading-relaxed text-sm font-medium">{value.description}</p>
                 </div>
               </div>
             ))}
