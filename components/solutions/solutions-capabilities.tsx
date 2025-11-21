@@ -2,7 +2,7 @@ export function SolutionsCapabilities() {
   return (
     <section className="bg-muted/30">
       {/* Section 01 */}
-      <div className="py-24 md:py-32 px-4 border-b border-border">
+      <div id="building-ai-solutions" className="py-24 md:py-32 px-4 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="text-4xl md:text-5xl font-bold text-muted-foreground/20 mb-4">
@@ -151,7 +151,7 @@ export function SolutionsCapabilities() {
       </div>
 
       {/* Section 07 - Training */}
-      <div className="py-24 md:py-32 px-4 bg-background">
+      <div id="training-your-team" className="py-24 md:py-32 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
@@ -253,7 +253,7 @@ export function SolutionsCapabilities() {
       </div>
 
       {/* Section 08 - AI Champion Training */}
-      <div className="py-24 md:py-32 px-4 bg-muted/30">
+      <div id="ai-champion-program" className="py-24 md:py-32 px-4 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             <div>

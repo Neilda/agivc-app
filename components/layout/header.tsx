@@ -58,8 +58,43 @@ export function Header() {
     }
   }
 
+  const handleSolutionsAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
+    if (pathname === "/solutions") {
+      e.preventDefault()
+      setTimeout(() => {
+        const element = document.getElementById(anchor)
+        if (element) {
+          const headerHeight = 64
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+          const offsetPosition = elementPosition - headerHeight
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          })
+        }
+      }, 100)
+      setIsOpen(false)
+    } else {
+      setIsOpen(false)
+      setTimeout(() => {
+        const element = document.getElementById(anchor)
+        if (element) {
+          const headerHeight = 64
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+          const offsetPosition = elementPosition - headerHeight
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          })
+        }
+      }, 500)
+    }
+  }
+
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="mx-auto max-w-[1400px]">
         <div className="relative flex items-center justify-between h-16 px-4">
           <Link href="/" className="flex-shrink-0 z-10">
@@ -70,8 +105,39 @@ export function Header() {
           <NavigationMenu viewport={false} className="hidden md:flex absolute left-1/2 -translate-x-1/2">
             <NavigationMenuList className="gap-8">
               <NavigationMenuItem>
+                <NavigationMenuTrigger variant="plain" className="text-sm font-medium text-foreground hover:text-secondary h-auto px-0 py-0 focus-visible:ring-0">
+                  Forward Deployed Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[250px] gap-4 p-4">
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href="/solutions#building-ai-solutions" onClick={(e) => handleSolutionsAnchorClick(e, "building-ai-solutions")}>
+                          Building AI solutions
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href="/solutions#training-your-team" onClick={(e) => handleSolutionsAnchorClick(e, "training-your-team")}>
+                          Training your team
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href="/solutions#ai-champion-program" onClick={(e) => handleSolutionsAnchorClick(e, "ai-champion-program")}>
+                          AI Champion program
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <NavigationMenuLink asChild className={dropdownLinkClass}>
-                  <Link href="/solutions">Solutions</Link>
+                  <Link href="/accelerator">Accelerator</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
@@ -90,12 +156,7 @@ export function Header() {
                     </li>
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href="/directory">Founders Directory</Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href="/success-stories">Success Stories</Link>
+                        <Link href="/sponsor">Sponsor</Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -110,20 +171,6 @@ export function Header() {
                   <ul className="grid w-[200px] gap-4 p-4">
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href={getLink("/", "about")} onClick={(e) => handleAnchorClick(e, "about")}>
-                          About AGIVC
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href={getLink("/", "mission")} onClick={(e) => handleAnchorClick(e, "mission")}>
-                          Mission & Values
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild className={dropdownLinkClass}>
                         <Link href="/team">
                           Team
                         </Link>
@@ -136,12 +183,6 @@ export function Header() {
                     </li>
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={dropdownLinkClass}>
-                  <Link href="/sponsor">Sponsor</Link>
-                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -191,12 +232,45 @@ export function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <nav className="md:hidden pb-4 space-y-4 px-4">
+            <div className="space-y-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Forward Deployed Services</p>
+              <Link
+                href="/solutions#building-ai-solutions"
+                onClick={(e) => {
+                  handleSolutionsAnchorClick(e, "building-ai-solutions")
+                  setIsOpen(false)
+                }}
+                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+              >
+                Building AI solutions
+              </Link>
+              <Link
+                href="/solutions#training-your-team"
+                onClick={(e) => {
+                  handleSolutionsAnchorClick(e, "training-your-team")
+                  setIsOpen(false)
+                }}
+                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+              >
+                Training your team
+              </Link>
+              <Link
+                href="/solutions#ai-champion-program"
+                onClick={(e) => {
+                  handleSolutionsAnchorClick(e, "ai-champion-program")
+                  setIsOpen(false)
+                }}
+                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+              >
+                AI Champion program
+              </Link>
+            </div>
             <Link
-              href="/solutions"
+              href="/accelerator"
               onClick={() => setIsOpen(false)}
               className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
             >
-              Solutions
+              Accelerator
             </Link>
 
             <div className="space-y-2">
@@ -212,42 +286,15 @@ export function Header() {
                 Events
               </Link>
               <Link
-                href="/directory"
+                href="/sponsor"
                 onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
-                Founders Directory
-              </Link>
-              <Link
-                href="/success-stories"
-                onClick={() => setIsOpen(false)}
-                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
-              >
-                Success Stories
+                Sponsor
               </Link>
             </div>
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">About</p>
-              <Link
-                href={getLink("/", "about")}
-                onClick={(e) => {
-                  handleAnchorClick(e, "about")
-                  setIsOpen(false)
-                }}
-                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
-              >
-                About AGIVC
-              </Link>
-              <Link
-                href={getLink("/", "mission")}
-                onClick={(e) => {
-                  handleAnchorClick(e, "mission")
-                  setIsOpen(false)
-                }}
-                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
-              >
-                Mission & Values
-              </Link>
               <Link
                 href="/team"
                 onClick={() => setIsOpen(false)}
@@ -263,13 +310,6 @@ export function Header() {
                 Press Kit
               </Link>
             </div>
-            <Link
-              href="/sponsor"
-              onClick={() => setIsOpen(false)}
-              className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
-            >
-              Sponsor
-            </Link>
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Start here</p>
               <Link

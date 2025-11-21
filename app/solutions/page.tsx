@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer"
 import { SolutionsHero } from "@/components/solutions/solutions-hero"
 import { SolutionsCapabilities } from "@/components/solutions/solutions-capabilities"
 import { SolutionsCTA } from "@/components/solutions/solutions-cta"
+import { SolutionsAnchorScroll } from "@/components/solutions/solutions-anchor-scroll"
 
 export const metadata = {
   title: "AGIVC: Forward Deployed | AI Solutions",
@@ -13,6 +14,7 @@ export const metadata = {
 export default function SolutionsPage() {
   return (
     <>
+      <SolutionsAnchorScroll />
       <Header />
       <main>
         <SolutionsHero />
