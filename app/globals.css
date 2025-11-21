@@ -125,3 +125,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+.agivc-logo-group img.agivc-logo-main {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path 0.15s ease-in-out 0.15s;
+}
+
+.agivc-logo-group:hover img.agivc-logo-main {
+  clip-path: inset(0 100% 0 0);
+  transition-delay: 0s;
+}
+
+.agivc-logo-group img.agivc-logo-wordmark {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.15s ease-in-out 0s;
+}
+
+.agivc-logo-group:hover img.agivc-logo-wordmark {
+  clip-path: inset(0 0% 0 0);
+  transition-delay: 0.15s;
+}

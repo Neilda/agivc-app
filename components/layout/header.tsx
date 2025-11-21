@@ -1,16 +1,25 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Link from "next/link"
-import Image from "next/image"
 import { usePathname } from 'next/navigation'
+import { AgivcLogo } from "@/components/shared/agivc-logo"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const pathname = usePathname()
   const isHomePage = pathname === "/"
+  const dropdownLinkClass =
+    "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0"
 
   const getLink = (href: string, anchor?: string) => {
     if (isHomePage && anchor) {
@@ -42,166 +51,129 @@ export function Header() {
       <div className="mx-auto max-w-[1400px]">
         <div className="relative flex items-center justify-between h-16 px-4">
           <Link href="/" className="flex-shrink-0 z-10">
-            <Image
-              src="/logos/agivc-logo-nov-25-light.png"
-              alt="AGIVC"
-              width={400}
-              height={133}
-              className="h-20 w-auto"
-            />
+            <AgivcLogo mode="light" className="h-20 w-auto" />
           </Link>
 
           {/* Desktop Menu - Centered */}
-          <nav className="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
-            <Link
-              href="/solutions"
-              className="text-sm font-medium text-foreground hover:text-secondary transition"
-            >
-              Solutions
-            </Link>
+          <NavigationMenu viewport={false} className="hidden md:flex absolute left-1/2 -translate-x-1/2">
+            <NavigationMenuList className="gap-8">
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={dropdownLinkClass}>
+                  <Link href="/solutions">Solutions</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
-            <div
-              className="relative"
-              onMouseEnter={() => setOpenDropdown("community")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-secondary transition h-16">
-                Community
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${openDropdown === "community" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openDropdown === "community" && (
-                <div className="absolute top-12 left-0 w-64">
-                  <div className="bg-background border border-border rounded-xl shadow-lg py-4 px-2">
-                    <div className="space-y-1">
-                      <Link
-                        href={getLink("/", "events")}
-                        onClick={(e) => handleAnchorClick(e, "events")}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        Events
-                      </Link>
-                      <Link
-                        href="/directory"
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        Founders Directory
-                      </Link>
-                      <Link
-                        href="/success-stories"
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        Success Stories
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger variant="plain" className="text-sm font-medium text-foreground hover:text-secondary h-auto px-0 py-0 focus-visible:ring-0">
+                  Community
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-4 p-4">
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href={getLink("/", "events")} onClick={(e) => handleAnchorClick(e, "events")}>
+                          Events
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href="/directory">Founders Directory</Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href="/success-stories">Success Stories</Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <div
-              className="relative"
-              onMouseEnter={() => setOpenDropdown("about")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-secondary transition h-16">
-                About
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${openDropdown === "about" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openDropdown === "about" && (
-                <div className="absolute top-12 left-0 w-64">
-                  <div className="bg-background border border-border rounded-xl shadow-lg py-4 px-2">
-                    <div className="space-y-1">
-                      <Link
-                        href={getLink("/", "about")}
-                        onClick={(e) => handleAnchorClick(e, "about")}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        About AGIVC
-                      </Link>
-                      <Link
-                        href={getLink("/", "mission")}
-                        onClick={(e) => handleAnchorClick(e, "mission")}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        Mission & Values
-                      </Link>
-                      <Link
-                        href={getLink("/", "team")}
-                        onClick={(e) => handleAnchorClick(e, "team")}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        Team & Partners
-                      </Link>
-                      <Link
-                        href="/press-kit"
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition"
-                      >
-                        Press Kit
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger variant="plain" className="text-sm font-medium text-foreground hover:text-secondary h-auto px-0 py-0 focus-visible:ring-0">
+                  About
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-4 p-4">
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href={getLink("/", "about")} onClick={(e) => handleAnchorClick(e, "about")}>
+                          About AGIVC
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href={getLink("/", "mission")} onClick={(e) => handleAnchorClick(e, "mission")}>
+                          Mission & Values
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href={getLink("/", "team")} onClick={(e) => handleAnchorClick(e, "team")}>
+                          Team & Partners
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild className={dropdownLinkClass}>
+                        <Link href="/press-kit">Press Kit</Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <Link
-              href="/sponsor"
-              className="text-sm font-medium text-foreground hover:text-secondary transition"
-            >
-              Sponsor
-            </Link>
-          </nav>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={dropdownLinkClass}>
+                  <Link href="/sponsor">Sponsor</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Desktop CTA Button - Right Side */}
-          <div className="hidden md:flex items-center gap-4 z-10">
-            <div
-              className="relative"
-              onMouseEnter={() => setOpenDropdown("start")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition flex items-center gap-1">
-                Start here
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${openDropdown === "start" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openDropdown === "start" && (
-                <div className="absolute top-full right-0 w-auto min-w-[200px] pt-2">
-                  <div className="bg-background border border-border rounded-xl shadow-lg py-4 px-2">
-                    <div className="space-y-1">
-                      <Link
-                        href="/sponsor"
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition whitespace-nowrap"
-                      >
-                        Become a Sponsor
-                      </Link>
-                      <Link
-                        href="/accelerator"
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition whitespace-nowrap"
-                      >
-                        Apply for Accelerator
-                      </Link>
-                      <a
-                        href="https://discord.gg/6M45X7ySUc"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-lg transition whitespace-nowrap"
-                      >
-                        Join Discord
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          <NavigationMenu viewport={false} className="hidden md:flex z-10">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger variant="primary">
+                  Start here
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-4 p-4">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link href="/sponsor" className="whitespace-nowrap">
+                          Become a Sponsor
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link href="/accelerator" className="whitespace-nowrap">
+                          Apply for Accelerator
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a
+                          href="https://discord.gg/6M45X7ySUc"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="whitespace-nowrap"
+                        >
+                          Join Discord
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Mobile Menu Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 z-10" aria-label="Toggle menu">

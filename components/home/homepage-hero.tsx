@@ -8,7 +8,7 @@ export function HomepageHero() {
   return (
     <HeroSection background="subtle" className="pt-8 pb-20 md:pt-12 md:pb-24">
       <div className="flex flex-col items-start text-left max-w-4xl mb-16">
-        <p className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-foreground max-w-4xl mb-6 text-balance leading-tight">
+        <p className="text-lg sm:text-xl lg:text-2xl font-medium tracking-tight text-foreground max-w-4xl mb-6 text-balance leading-tight">
           Think in decades. Ship this weekend. <br />
           We provide AI solutions, run AI communities, and invest through our
           accelerator.

@@ -1,6 +1,6 @@
 import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { AgivcLogo } from "@/components/shared/agivc-logo";
 
 export function Footer() {
   return (
@@ -8,13 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <Image
-              src="/logos/agivc-logo-nov-25-dark.png"
-              alt="AGIVC"
-              width={400}
-              height={133}
-              className="h-24 w-auto mb-4"
-            />
+            <AgivcLogo mode="dark" className="h-24 w-auto mb-4" />
             <p className="text-sm text-primary-foreground/70">
               Think in decades. Ship this weekend.
             </p>
