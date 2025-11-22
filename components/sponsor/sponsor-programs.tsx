@@ -5,68 +5,32 @@ export function SponsorPrograms() {
     {
       name: "Meetups",
       icon: Users,
-      description: "Sponsor our monthly AI Tinkerers meetups with 150+ builders. Get brand visibility, speaking opportunities, and direct access to Canada's top AI talent.",
-      benefits: [
-        "Logo placement on event materials",
-        "5-minute sponsor presentation slot",
-        "Dedicated sponsor table at venue",
-        "Access to attendee list",
-      ],
+      description: "Sponsor monthly AI Tinkerers meetups with 150+ builders. Get brand visibility and access to top AI talent.",
     },
     {
       name: "Hackathons",
       icon: Code,
-      description: "Support our hackathons where teams build AI solutions in 48 hours. Perfect for developer tools, APIs, and technical platforms.",
-      benefits: [
-        "Naming rights opportunity",
-        "Technical workshop slot",
-        "Mentor access to participants",
-        "Winner announcement presence",
-      ],
+      description: "Support hackathons where teams build AI solutions in 48 hours. Perfect for developer tools and APIs.",
     },
     {
       name: "Newsletter",
       icon: Mail,
-      description: "Reach 10K+ subscribers with monthly sponsor spotlights, product announcements, and thought leadership content.",
-      benefits: [
-        "Dedicated sponsor section",
-        "Featured content placement",
-        "Quarterly thought leadership article",
-        "Newsletter analytics access",
-      ],
+      description: "Reach 10K+ subscribers with monthly sponsor spotlights and product announcements.",
     },
     {
       name: "Video Interview Series",
       icon: Video,
-      description: "Sponsor our founder interview series featuring deep conversations with Canada's most successful AI entrepreneurs.",
-      benefits: [
-        "Pre-roll video sponsorship",
-        "Logo in video credits",
-        "Featured in series promotion",
-        "Access to full video library",
-      ],
+      description: "Sponsor founder interview series featuring conversations with Canada's top AI entrepreneurs.",
     },
     {
       name: "AI Accelerator",
       icon: Rocket,
-      description: "Support our 6-week accelerator program. Sponsor demo day, mentor sessions, or provide resources to cohort companies.",
-      benefits: [
-        "Demo day sponsorship",
-        "Mentor session access",
-        "Cohort company introductions",
-        "Program graduation presence",
-      ],
+      description: "Support our 6-week accelerator program. Sponsor demo day, mentor sessions, or provide resources.",
     },
     {
       name: "Waterloo Hackerhouse",
       icon: Building2,
-      description: "Sponsor our Waterloo hackerhouse program providing space and resources for founders building AI companies.",
-      benefits: [
-        "Space naming opportunity",
-        "Resource provider recognition",
-        "Resident founder access",
-        "Quarterly sponsor events",
-      ],
+      description: "Sponsor Waterloo hackerhouse program providing space and resources for AI founders.",
     },
   ]
 
@@ -86,24 +50,11 @@ export function SponsorPrograms() {
             return (
               <div
                 key={index}
-                className="p-6 bg-background rounded-2xl border-2 border-border hover:border-foreground transition flex flex-col"
+                className="p-6 bg-background rounded-2xl border-2 border-border hover:border-foreground transition"
               >
-                <div className="mb-4">
-                  <Icon className="w-12 h-12 text-foreground mb-4" strokeWidth={1} />
-                  <h3 className="text-xl font-bold text-foreground mb-2">{program.name}</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed mb-4">{program.description}</p>
-                </div>
-                <div className="mt-auto">
-                  <p className="text-sm font-semibold text-foreground mb-3">Benefits include:</p>
-                  <ul className="space-y-2">
-                    {program.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-foreground/70">
-                        <span className="text-foreground mt-1">•</span>
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Icon className="w-12 h-12 text-foreground mb-4" strokeWidth={1} />
+                <h3 className="text-xl font-bold text-foreground mb-2">{program.name}</h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">{program.description}</p>
               </div>
             )
           })}
