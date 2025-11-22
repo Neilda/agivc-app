@@ -31,7 +31,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
   const dropdownLinkClass =
-    "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0"
+    "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent !focus-visible:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0"
+  
+  const topLevelLinkClass =
+    "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent !focus-visible:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0 !rounded-none [&:focus]:!bg-transparent [&:active]:!bg-transparent [&:focus-visible]:!bg-transparent"
 
   const getLink = (href: string, anchor?: string) => {
     if (isHomePage && anchor) {
@@ -142,25 +145,29 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger variant="plain" className="text-sm font-medium text-foreground hover:text-secondary h-auto px-0 py-0 focus-visible:ring-0">
-                  Community
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-4 p-4">
-                    <li>
-                      <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href={getLink("/", "events")} onClick={(e) => handleAnchorClick(e, "events")}>
-                          Events
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href="/community">Sponsor</Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild className={topLevelLinkClass}>
+                  <Link 
+                    href={getLink("/", "events")} 
+                    onClick={(e) => {
+                      handleAnchorClick(e, "events")
+                      e.currentTarget.blur()
+                    }}
+                    className="focus:outline-none focus-visible:outline-none"
+                  >
+                    Events
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={topLevelLinkClass}>
+                  <Link 
+                    href="/community"
+                    className="focus:outline-none focus-visible:outline-none"
+                  >
+                    Sponsor
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -272,27 +279,23 @@ export function Header() {
             >
               Accelerator
             </Link>
-
-            <div className="space-y-2">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Community</p>
-              <Link
-                href={getLink("/", "events")}
-                onClick={(e) => {
-                  handleAnchorClick(e, "events")
-                  setIsOpen(false)
-                }}
-                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
-              >
-                Events
-              </Link>
-              <Link
-                href="/community"
-                onClick={() => setIsOpen(false)}
-                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
-              >
-                Sponsor
-              </Link>
-            </div>
+            <Link
+              href={getLink("/", "events")}
+              onClick={(e) => {
+                handleAnchorClick(e, "events")
+                setIsOpen(false)
+              }}
+              className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+            >
+              Events
+            </Link>
+            <Link
+              href="/community"
+              onClick={() => setIsOpen(false)}
+              className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+            >
+              Sponsor
+            </Link>
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">About</p>
               <Link

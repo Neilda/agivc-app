@@ -36,10 +36,8 @@ export function SponsorSuccessStories() {
               className="p-8 bg-background rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="mb-4">
-                <div className="text-sm font-medium text-primary mb-1">{story.program}</div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{story.sponsor}</h3>
               </div>
-              <p className="text-sm font-medium text-foreground/70 mb-4">{story.result}</p>
               <p className="text-foreground/60 italic leading-relaxed">"{story.quote}"</p>
             </div>
           ))}
