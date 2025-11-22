@@ -13,6 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import { Badge } from "@/components/ui/badge"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -167,8 +168,9 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/accelerator" className={topLevelLinkClass}>
+                <Link href="/accelerator" className={`${topLevelLinkClass} flex items-center gap-2`}>
                   Accelerator
+                  <Badge variant="secondary">Coming Soon</Badge>
                 </Link>
               </NavigationMenuItem>
 
@@ -206,7 +208,7 @@ export function Header() {
                     </li>
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href="/press-kit">Press Kit</Link>
+                        <a href="https://drive.google.com/drive/folders/1_QBfatv7365RhtDx8qMmB_UUldu66EwO?usp=sharing" target="_blank" rel="noopener noreferrer">Press Kit</a>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -224,6 +226,13 @@ export function Header() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="right-0 left-auto">
                   <ul className="grid w-[200px] gap-4 p-4">
+                    <li>
+                      <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
+                        <Link href="/solutions">
+                          Hire Us
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
                     <li>
                       <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
                         <Link href="/community">
@@ -296,9 +305,10 @@ export function Header() {
             <Link
               href="/accelerator"
               onClick={() => setIsOpen(false)}
-              className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+              className="flex items-center gap-2 px-2 text-sm font-medium text-foreground hover:text-secondary transition"
             >
               Accelerator
+              <Badge variant="secondary">Coming Soon</Badge>
             </Link>
             <Link
               href={getLink("/", "events")}
@@ -326,16 +336,25 @@ export function Header() {
               >
                 Team
               </Link>
-              <Link
-                href="/press-kit"
+              <a
+                href="https://drive.google.com/drive/folders/1_QBfatv7365RhtDx8qMmB_UUldu66EwO?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
                 Press Kit
-              </Link>
+              </a>
             </div>
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Start here</p>
+              <Link
+                href="/solutions"
+                onClick={() => setIsOpen(false)}
+                className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
+              >
+                Hire Us
+              </Link>
               <Link
                 href="/community"
                 onClick={() => setIsOpen(false)}
