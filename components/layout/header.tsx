@@ -32,9 +32,24 @@ export function Header() {
   }, [])
   const dropdownLinkClass =
     "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent !focus-visible:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0"
-  
+
   const topLevelLinkClass =
-    "text-sm font-medium text-foreground hover:text-secondary !bg-transparent !hover:bg-transparent !focus:bg-transparent !focus-visible:bg-transparent data-[active=true]:!bg-transparent data-[state=open]:!bg-transparent px-0 py-0 !rounded-none [&:focus]:!bg-transparent [&:active]:!bg-transparent [&:focus-visible]:!bg-transparent"
+    "text-sm font-medium text-foreground hover:text-secondary px-0 py-0 focus:outline-none focus-visible:outline-none transition-colors"
+
+  const scrollToAnchor = (anchor: string) => {
+    if (typeof window === "undefined") return false
+    const element = document.getElementById(anchor)
+    if (!element) return false
+    const headerHeight = 64
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+    const offsetPosition = elementPosition - headerHeight
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })
+    return true
+  }
 
   const getLink = (href: string, anchor?: string) => {
     if (isHomePage && anchor) {
@@ -44,22 +59,35 @@ export function Header() {
   }
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
-    if (isHomePage) {
-      e.preventDefault()
-      const element = document.getElementById(anchor)
-      if (element) {
-        const headerHeight = 64
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-        const offsetPosition = elementPosition - headerHeight
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
-      }
-      setIsOpen(false)
+    if (!isHomePage) {
+      return
     }
+    e.preventDefault()
+    scrollToAnchor(anchor)
+    setIsOpen(false)
   }
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    if (!isHomePage) return
+    const hash = window.location.hash ? window.location.hash.replace("#", "") : ""
+    if (!hash) return
+
+    let attempts = 0
+    const maxAttempts = 8
+
+    const attemptScroll = () => {
+      if (scrollToAnchor(hash) || attempts >= maxAttempts) {
+        return
+      }
+      attempts += 1
+      window.setTimeout(attemptScroll, 100)
+    }
+
+    const timeoutId = window.setTimeout(attemptScroll, 100)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [isHomePage])
 
   const handleSolutionsAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
     if (pathname === "/solutions") {
@@ -139,35 +167,28 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={dropdownLinkClass}>
-                  <Link href="/accelerator">Accelerator</Link>
-                </NavigationMenuLink>
+                <Link href="/accelerator" className={topLevelLinkClass}>
+                  Accelerator
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={topLevelLinkClass}>
-                  <Link 
-                    href={getLink("/", "events")} 
-                    onClick={(e) => {
-                      handleAnchorClick(e, "events")
-                      e.currentTarget.blur()
-                    }}
-                    className="focus:outline-none focus-visible:outline-none"
-                  >
-                    Events
-                  </Link>
-                </NavigationMenuLink>
+                <Link
+                  href={getLink("/", "events")}
+                  onClick={(e) => {
+                    handleAnchorClick(e, "events")
+                    e.currentTarget.blur()
+                  }}
+                  className={topLevelLinkClass}
+                >
+                  Events
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={topLevelLinkClass}>
-                  <Link 
-                    href="/community"
-                    className="focus:outline-none focus-visible:outline-none"
-                  >
-                    Sponsor
-                  </Link>
-                </NavigationMenuLink>
+                <Link href="/community" className={topLevelLinkClass}>
+                  Sponsor
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>

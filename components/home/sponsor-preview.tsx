@@ -7,7 +7,7 @@ export function SponsorPreview() {
       cards={[
         {
           title: "Events, hackathons, conference",
-          description: "Sponsor our largest hackathons with 400+ attendees, monthly meetups, and major conferences. Get brand visibility, speaking opportunities, and direct access to Canada's top AI talent.",
+          description: "Back our flagship hackathons, meetups, and conferences to put your brand in front of Canada's AI builders.",
           cta: {
             text: "Learn more",
             href: "/community#success-stories",
@@ -15,7 +15,7 @@ export function SponsorPreview() {
         },
         {
           title: "Newsletter and Podcast",
-          description: "Reach 10K+ subscribers with monthly sponsor spotlights, product announcements, and thought leadership content. Sponsor our founder interview series featuring deep conversations with Canada's most successful AI entrepreneurs.",
+          description: "Reach 10K+ subscribers through sponsor spotlights and join founder interviews on our podcast.",
           cta: {
             text: "Learn more",
             href: "/community#success-stories",
@@ -23,7 +23,7 @@ export function SponsorPreview() {
         },
         {
           title: "AI Accelerator",
-          description: "Sponsor our 6-week intensive program with 2.5 weeks in San Francisco. Mentor startups, test your products with founders, and gain early access to the next generation of AI companies.",
+          description: "Fuel our 6-week accelerator, mentor founders, and get early access to emerging AI products.",
           cta: {
             text: "Learn more",
             href: "/community#success-stories",
