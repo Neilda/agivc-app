@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://agiventures.ca"),
   title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
   description:
-    "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
+    "Think in decades. Ship this weekend. AI community, services, training and accelerator.",
   generator: "Next.js",
   icons: {
     icon: "/AGIVC-ico.png",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
     description:
-      "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
+      "Think in decades. Ship this weekend. AI community, services, training and accelerator.",
     url: "https://agiventures.ca",
     siteName: "AGI Ventures Canada",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AGI Ventures Canada | Investing in AI & Robotics Founders",
     description:
-      "Think in decades. Ship this weekend. We provide AI solutions, run AI communities, and invest through our accelerator.",
+      "Think in decades. Ship this weekend. AI community, services, training and accelerator.",
     images: ["/team/table-laptop-mid-size-team.JPG"],
   },
 };

@@ -115,7 +115,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/sponsor"
+                  href="/community"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition"
                 >
                   Become A Sponsor

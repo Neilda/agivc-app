@@ -156,7 +156,7 @@ export function Header() {
                     </li>
                     <li>
                       <NavigationMenuLink asChild className={dropdownLinkClass}>
-                        <Link href="/sponsor">Sponsor</Link>
+                        <Link href="/community">Sponsor</Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -198,7 +198,7 @@ export function Header() {
                   <ul className="grid w-[200px] gap-4 p-4">
                     <li>
                       <NavigationMenuLink asChild className={`${dropdownLinkClass} whitespace-nowrap`}>
-                        <Link href="/sponsor">
+                        <Link href="/community">
                           Become A Sponsor
                         </Link>
                       </NavigationMenuLink>
@@ -286,7 +286,7 @@ export function Header() {
                 Events
               </Link>
               <Link
-                href="/sponsor"
+                href="/community"
                 onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >
@@ -313,7 +313,7 @@ export function Header() {
             <div className="space-y-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Start here</p>
               <Link
-                href="/sponsor"
+                href="/community"
                 onClick={() => setIsOpen(false)}
                 className="block px-2 text-sm font-medium text-foreground hover:text-secondary transition"
               >

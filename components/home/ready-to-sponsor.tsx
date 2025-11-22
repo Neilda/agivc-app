@@ -9,7 +9,7 @@ export function ReadyToSponsor() {
           Ready to sponsor?
         </h2>
         <Link
-          href="/sponsor"
+          href="/community"
           className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-colors group"
         >
           <span>Sponsor</span>

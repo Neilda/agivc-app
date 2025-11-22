@@ -3,7 +3,7 @@ import { SectionWithMedia } from "@/components/sections/section-with-media";
 export function ForwardDeployedSection() {
   return (
     <SectionWithMedia
-      title="Forward Deployed"
+      title="NEW: Forward Deployed Services"
       description="We build production-ready AI systems, train your teams, and develop AI champions who drive transformation."
       media={{
         type: "image",
@@ -15,7 +15,7 @@ export function ForwardDeployedSection() {
         href: "/solutions",
       }}
       align="left"
-      background="default"
+      background="muted"
     />
   );
 }

@@ -85,12 +85,14 @@ export function SectionWithMedia({
             {media.type === "image" && (
               <>
                 <div className="absolute inset-0 bg-muted/20" />
-                <Image
-                  src={media.src}
-                  alt={media.alt}
-                  fill
-                  className="object-cover rounded-[4px]"
-                />
+                <div className="absolute inset-4 md:inset-6 lg:inset-8 rounded-sm overflow-hidden">
+                  <Image
+                    src={media.src}
+                    alt={media.alt}
+                    fill
+                    className="object-cover rounded-[4px]"
+                  />
+                </div>
               </>
             )}
             
@@ -108,7 +110,11 @@ export function SectionWithMedia({
               </div>
             )}
             
-            {media.type === "custom" && media.content}
+            {media.type === "custom" && (
+              <div className="absolute inset-4 md:inset-6 lg:inset-8">
+                {media.content}
+              </div>
+            )}
             
             <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-sm pointer-events-none" />
           </div>
