@@ -10,6 +10,14 @@ Development branch is "dev". Production brand is "main". Live page is on product
 
 All page components (files in the `app/` directory that export a default component) must be server-side rendered. Never use `"use client"` directive in page files. If client-side functionality is needed, extract it into separate client components.
 
+## UI Components
+
+Base components are shadcn/ui components. If a component doesn't exist in `/components/ui`, refer to the [shadcn/ui documentation](https://ui.shadcn.com/docs/installation/next) to download and add it using:
+
+```bash
+pnpm dlx shadcn@latest add <component-name>
+```
+
 ## Cursor Rules
 
 Component-specific cursor rules are stored in a `.cursor/` folder within the component's directory. For example:
