@@ -23,7 +23,7 @@ export function SponsorPreview() {
         },
         {
           title: "AI Accelerator",
-          description: "Fuel our 6-week accelerator, mentor founders, and get early access to emerging AI products.",
+          description: "Fuel our 3-month accelerator, mentor founders, and get early access to emerging AI products.",
           cta: {
             text: "Learn more",
             href: "/community#success-stories",
