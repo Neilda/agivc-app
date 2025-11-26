@@ -34,7 +34,7 @@ jobs:
 
           curl -H "Content-Type: application/json" \
             -d "$(jq -n \
-              --arg title "$EMOJI Issue #$ISSUE_NUMBER opened" \
+              --arg title "[agivc-app] $EMOJI Issue #$ISSUE_NUMBER opened" \
               --arg url "$ISSUE_URL" \
               --arg message "$TRUNCATED_MESSAGE" \
               --arg author "$ISSUE_AUTHOR" \

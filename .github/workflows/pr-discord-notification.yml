@@ -48,7 +48,7 @@ jobs:
 
           curl -H "Content-Type: application/json" \
             -d "$(jq -n \
-              --arg title "$EMOJI PR #$PR_NUMBER $ACTION_TEXT" \
+              --arg title "[agivc-app] $EMOJI PR #$PR_NUMBER $ACTION_TEXT" \
               --arg url "$PR_URL" \
               --arg message "$TRUNCATED_MESSAGE" \
               --arg author "$PR_AUTHOR" \

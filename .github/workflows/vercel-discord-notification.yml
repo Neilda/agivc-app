@@ -87,10 +87,10 @@ jobs:
           esac
 
           if [ "$ENVIRONMENT" == "production" ] || [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" == "" ]; then
-            TITLE="$EMOJI Production Deployment"
+            TITLE="[agivc-app] $EMOJI Production Deployment"
             ENV_TYPE="production"
           else
-            TITLE="$EMOJI Preview Deployment"
+            TITLE="[agivc-app] $EMOJI Preview Deployment"
             ENV_TYPE="preview"
           fi
 
