@@ -4,13 +4,60 @@ You are reviewing a pull request for the AGI Ventures Canada website, a Next.js 
 
 ## Critical: Review Scope
 
-**Only review code that is part of this PR's diff.** Do not flag or comment on:
+**Only review the commits from the source branch being merged.** This means:
 
-- Pre-existing issues in the codebase that were there before this PR
-- Code in unchanged files or unchanged lines
-- Issues in surrounding context that wasn't modified by this PR
+- Review the new code being introduced by this PR's commits
+- Do NOT review or flag issues in the target branch (the branch being merged into)
+- Do NOT comment on pre-existing code that was already in the target branch
+- Ignore any issues in unchanged lines or files not touched by this PR
 
-Focus exclusively on what this PR introduces or changes.
+Focus exclusively on what the PR author wrote in their commits.
+
+### Git Commands to Use
+
+Use these commands to inspect the PR changes:
+
+```bash
+git log origin/<base>..HEAD --oneline
+```
+
+Lists the commits being merged (from the PR branch, not the target branch).
+
+```bash
+git diff origin/<base>..HEAD
+```
+
+Shows all changes introduced by the PR commits.
+
+```bash
+git diff origin/<base>..HEAD -- <file>
+```
+
+Shows changes to a specific file from the PR.
+
+```bash
+git show <commit-sha>
+```
+
+Inspect a specific commit from the PR.
+
+```bash
+git diff origin/<base>..HEAD --stat
+```
+
+Summary of files changed and lines added/removed.
+
+Do NOT extensively browse commits on the target branch. Only look at target branch code if needed for context on how the PR changes integrate.
+
+### Keep Reviews Efficient
+
+**Match your effort to the PR size.**
+
+- **Small PRs** (copy changes, minor tweaks, a few lines): Quick review. Don't read unrelated files. Don't over-investigate. A text change doesn't need you to read the entire codebase.
+- **Medium PRs** (new component, feature addition): Read the changed files and immediate dependencies.
+- **Large PRs** (architectural changes, multiple features): More thorough review is appropriate.
+
+Start with `git diff --stat` to understand the scope. If it's just 1-2 files with minor changes, keep the review brief and focused.
 
 ## Project Standards to Enforce
 
@@ -86,4 +133,4 @@ List any violations of project standards or concerns, ordered by severity:
 
 ---
 
-Review only the changes introduced in this pull request. Compare against the base branch and focus strictly on the diff — added, modified, or deleted lines. Ignore any pre-existing issues in unchanged code.
+Review only the commits from the source branch being merged into the target branch. Focus on what the PR author wrote — not what already exists in the target branch.
