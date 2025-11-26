@@ -179,14 +179,15 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          TRUNCATED_MESSAGE="${CLAUDE_MESSAGE:0:500}"
-          if [ ${#CLAUDE_MESSAGE} -gt 500 ]; then
+          CLEANED_MESSAGE=$(echo "$CLAUDE_MESSAGE" | sed 's/[[:space:]]/ /g' | tr -d '\n' | sed 's/✅//g' | sed 's/⚠️//g' | sed 's/🔴//g' | sed 's/🟡//g' | sed 's/🔵//g')
+          TRUNCATED_MESSAGE="${CLEANED_MESSAGE:0:200}"
+          if [ ${#CLEANED_MESSAGE} -gt 200 ]; then
             TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
           fi
 
           curl -H "Content-Type: application/json" \
             -d "$(jq -n \
-              --arg title "🤖 Claude Review: $PR_TITLE" \
+              --arg title "Claude Review: $PR_TITLE" \
               --arg url "$PR_URL" \
               --arg author "$PR_AUTHOR" \
               --arg review "$TRUNCATED_MESSAGE" \

@@ -48,3 +48,104 @@ jobs:
           # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
           # claude_args: '--allowed-tools Bash(gh pr:*)'
 
+  discord-notification:
+    runs-on: ubuntu-latest
+    needs: claude
+    if: always()
+    permissions:
+      pull-requests: read
+      issues: read
+    steps:
+      - name: Get Claude's comment
+        id: get-comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            let issueNumber;
+            let title;
+            let url;
+            let author;
+
+            if (context.eventName === 'issue_comment') {
+              issueNumber = context.payload.issue.number;
+              title = context.payload.issue.title;
+              url = context.payload.issue.html_url;
+              author = context.payload.issue.user.login;
+            } else if (context.eventName === 'pull_request_review_comment') {
+              issueNumber = context.payload.pull_request.number;
+              title = context.payload.pull_request.title;
+              url = context.payload.pull_request.html_url;
+              author = context.payload.pull_request.user.login;
+            } else if (context.eventName === 'pull_request_review') {
+              issueNumber = context.payload.pull_request.number;
+              title = context.payload.pull_request.title;
+              url = context.payload.pull_request.html_url;
+              author = context.payload.pull_request.user.login;
+            } else if (context.eventName === 'issues') {
+              issueNumber = context.payload.issue.number;
+              title = context.payload.issue.title;
+              url = context.payload.issue.html_url;
+              author = context.payload.issue.user.login;
+            } else {
+              core.setOutput('comment_body', '');
+              return;
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 5000));
+
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+
+            const claudeComment = comments.data
+              .reverse()
+              .find(comment => 
+                comment.user.type === 'Bot' || 
+                comment.user.login.includes('claude')
+              );
+
+            if (claudeComment) {
+              core.setOutput('comment_body', claudeComment.body);
+              core.setOutput('title', title);
+              core.setOutput('url', url);
+              core.setOutput('author', author);
+            } else {
+              core.setOutput('comment_body', '');
+            }
+
+      - name: Send to Discord
+        if: steps.get-comment.outputs.comment_body != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          CLAUDE_MESSAGE: ${{ steps.get-comment.outputs.comment_body }}
+          TITLE: ${{ steps.get-comment.outputs.title }}
+          URL: ${{ steps.get-comment.outputs.url }}
+          AUTHOR: ${{ steps.get-comment.outputs.author }}
+        run: |
+          CLEANED_MESSAGE=$(echo "$CLAUDE_MESSAGE" | sed 's/[[:space:]]/ /g' | tr -d '\n' | sed 's/✅//g' | sed 's/⚠️//g' | sed 's/🔴//g' | sed 's/🟡//g' | sed 's/🔵//g')
+          TRUNCATED_MESSAGE="${CLEANED_MESSAGE:0:200}"
+          if [ ${#CLEANED_MESSAGE} -gt 200 ]; then
+            TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
+          fi
+
+          curl -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg title "Claude Response: $TITLE" \
+              --arg url "$URL" \
+              --arg author "$AUTHOR" \
+              --arg review "$TRUNCATED_MESSAGE" \
+              '{
+                embeds: [{
+                  title: $title,
+                  url: $url,
+                  color: 5814783,
+                  fields: [
+                    { name: "Author", value: $author, inline: true }
+                  ],
+                  description: $review
+                }]
+              }')" \
+            "$DISCORD_WEBHOOK_URL"
