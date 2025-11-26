@@ -1,0 +1,115 @@
+name: Vercel Deployment Discord Notification
+
+# Setup Instructions:
+# 1. Go to Vercel Project Settings → Webhooks
+# 2. Add webhook URL: https://api.github.com/repos/AGI-Ventures-Canada/agivc-app/dispatches
+# 3. Events: "Deployment Created" and "Deployment Ready"
+# 4. Add Authorization header: token YOUR_GITHUB_TOKEN (with repo scope)
+# 5. Or use Vercel's GitHub integration which automatically creates deployment_status events
+
+on:
+  deployment_status:
+  repository_dispatch:
+    types: [vercel-deployment]
+  workflow_dispatch:
+    inputs:
+      deployment_url:
+        description: "Deployment URL"
+        required: true
+      environment:
+        description: "Environment (production/preview)"
+        required: true
+      pr_number:
+        description: "PR Number (if preview)"
+        required: false
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'deployment_status' ||
+      github.event_name == 'repository_dispatch' ||
+      github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Determine deployment info
+        id: deployment-info
+        run: |
+          if [ "${{ github.event_name }}" == "deployment_status" ]; then
+            DEPLOYMENT_URL="${{ github.event.deployment_status.target_url }}"
+            ENVIRONMENT="${{ github.event.deployment.environment }}"
+            STATE="${{ github.event.deployment_status.state }}"
+            if [ "$ENVIRONMENT" == "production" ]; then
+              PR_NUMBER=""
+            else
+              PR_NUMBER=$(echo "${{ github.event.deployment.ref }}" | grep -oE 'pr-[0-9]+' | grep -oE '[0-9]+' || echo "")
+              if [ -z "$PR_NUMBER" ]; then
+                PR_NUMBER=$(echo "$DEPLOYMENT_URL" | grep -oE 'pr-[0-9]+' | grep -oE '[0-9]+' || echo "")
+              fi
+            fi
+          elif [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            DEPLOYMENT_URL="${{ github.event.client_payload.url || github.event.client_payload.deployment.url }}"
+            ENVIRONMENT="${{ github.event.client_payload.target || github.event.client_payload.deployment.target }}"
+            PR_NUMBER="${{ github.event.client_payload.pr_number || github.event.client_payload.deployment.meta.githubPrNumber }}"
+            STATE="success"
+          else
+            DEPLOYMENT_URL="${{ github.event.inputs.deployment_url }}"
+            ENVIRONMENT="${{ github.event.inputs.environment }}"
+            PR_NUMBER="${{ github.event.inputs.pr_number }}"
+            STATE="success"
+          fi
+
+          if [ "$STATE" != "success" ] && [ "$STATE" != "" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if [ "$ENVIRONMENT" == "production" ] || [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" == "" ]; then
+            TITLE="Production Deployment"
+            ENV_TYPE="production"
+          else
+            TITLE="Preview Deployment"
+            ENV_TYPE="preview"
+          fi
+
+          echo "deployment_url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+          echo "environment=$ENV_TYPE" >> $GITHUB_OUTPUT
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+
+      - name: Send to Discord
+        if: steps.deployment-info.outputs.skip != 'true'
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DEPLOYMENT_URL: ${{ steps.deployment-info.outputs.deployment_url }}
+          ENVIRONMENT: ${{ steps.deployment-info.outputs.environment }}
+          PR_NUMBER: ${{ steps.deployment-info.outputs.pr_number }}
+          TITLE: ${{ steps.deployment-info.outputs.title }}
+          BRANCH: ${{ steps.deployment-info.outputs.branch }}
+        run: |
+          if [ "$ENVIRONMENT" == "production" ]; then
+            MESSAGE="Production deployment completed. Preview: $DEPLOYMENT_URL"
+          elif [ -n "$PR_NUMBER" ] && [ "$PR_NUMBER" != "" ]; then
+            MESSAGE="Preview deployment for PR #$PR_NUMBER completed. Preview: $DEPLOYMENT_URL"
+          else
+            MESSAGE="Preview deployment completed. Preview: $DEPLOYMENT_URL"
+          fi
+
+          TRUNCATED_MESSAGE="${MESSAGE:0:200}"
+          if [ ${#MESSAGE} -gt 200 ]; then
+            TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
+          fi
+
+          curl -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg title "$TITLE" \
+              --arg url "$DEPLOYMENT_URL" \
+              --arg message "$TRUNCATED_MESSAGE" \
+              '{
+                embeds: [{
+                  title: $title,
+                  url: $url,
+                  color: 5814783,
+                  description: $message
+                }]
+              }')" \
+            "$DISCORD_WEBHOOK_URL"
