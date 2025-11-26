@@ -58,16 +58,39 @@ jobs:
             STATE="success"
           fi
 
-          if [ "$STATE" != "success" ] && [ "$STATE" != "" ]; then
-            echo "skip=true" >> $GITHUB_OUTPUT
-            exit 0
-          fi
+          case "$STATE" in
+            "success")
+              EMOJI="✅"
+              COLOR="3066993"
+              STATUS_TEXT="completed"
+              ;;
+            "error"|"failure")
+              EMOJI="❌"
+              COLOR="15158332"
+              STATUS_TEXT="failed"
+              ;;
+            "pending"|"in_progress"|"queued")
+              EMOJI="⏳"
+              COLOR="16776960"
+              STATUS_TEXT="in progress"
+              ;;
+            "cancelled")
+              EMOJI="🚫"
+              COLOR="10070709"
+              STATUS_TEXT="cancelled"
+              ;;
+            *)
+              EMOJI="ℹ️"
+              COLOR="5814783"
+              STATUS_TEXT="$STATE"
+              ;;
+          esac
 
           if [ "$ENVIRONMENT" == "production" ] || [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" == "" ]; then
-            TITLE="Production Deployment"
+            TITLE="$EMOJI Production Deployment"
             ENV_TYPE="production"
           else
-            TITLE="Preview Deployment"
+            TITLE="$EMOJI Preview Deployment"
             ENV_TYPE="preview"
           fi
 
@@ -75,23 +98,29 @@ jobs:
           echo "environment=$ENV_TYPE" >> $GITHUB_OUTPUT
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
           echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "emoji=$EMOJI" >> $GITHUB_OUTPUT
+          echo "status_text=$STATUS_TEXT" >> $GITHUB_OUTPUT
+          echo "color=$COLOR" >> $GITHUB_OUTPUT
+          echo "state=$STATE" >> $GITHUB_OUTPUT
 
       - name: Send to Discord
-        if: steps.deployment-info.outputs.skip != 'true'
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DEPLOYMENT_URL: ${{ steps.deployment-info.outputs.deployment_url }}
           ENVIRONMENT: ${{ steps.deployment-info.outputs.environment }}
           PR_NUMBER: ${{ steps.deployment-info.outputs.pr_number }}
           TITLE: ${{ steps.deployment-info.outputs.title }}
-          BRANCH: ${{ steps.deployment-info.outputs.branch }}
+          EMOJI: ${{ steps.deployment-info.outputs.emoji }}
+          STATUS_TEXT: ${{ steps.deployment-info.outputs.status_text }}
+          COLOR: ${{ steps.deployment-info.outputs.color }}
+          STATE: ${{ steps.deployment-info.outputs.state }}
         run: |
           if [ "$ENVIRONMENT" == "production" ]; then
-            MESSAGE="Production deployment completed. Preview: $DEPLOYMENT_URL"
+            MESSAGE="$EMOJI Production deployment $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
           elif [ -n "$PR_NUMBER" ] && [ "$PR_NUMBER" != "" ]; then
-            MESSAGE="Preview deployment for PR #$PR_NUMBER completed. Preview: $DEPLOYMENT_URL"
+            MESSAGE="$EMOJI Preview deployment for PR #$PR_NUMBER $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
           else
-            MESSAGE="Preview deployment completed. Preview: $DEPLOYMENT_URL"
+            MESSAGE="$EMOJI Preview deployment $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
           fi
 
           TRUNCATED_MESSAGE="${MESSAGE:0:200}"
@@ -104,11 +133,12 @@ jobs:
               --arg title "$TITLE" \
               --arg url "$DEPLOYMENT_URL" \
               --arg message "$TRUNCATED_MESSAGE" \
+              --arg color "$COLOR" \
               '{
                 embeds: [{
                   title: $title,
                   url: $url,
-                  color: 5814783,
+                  color: ($color | tonumber),
                   description: $message
                 }]
               }')" \
