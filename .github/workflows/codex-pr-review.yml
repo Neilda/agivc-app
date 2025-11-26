@@ -61,8 +61,8 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          TRUNCATED_MESSAGE="${CODEX_MESSAGE:0:1800}"
-          if [ ${#CODEX_MESSAGE} -gt 1800 ]; then
+          TRUNCATED_MESSAGE="${CODEX_MESSAGE:0:500}"
+          if [ ${#CODEX_MESSAGE} -gt 500 ]; then
             TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
           fi
 
