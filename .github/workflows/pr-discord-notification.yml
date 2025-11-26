@@ -1,0 +1,67 @@
+name: PR Discord Notification
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.state == 'closed'
+    steps:
+      - name: Determine PR status
+        id: pr-status
+        run: |
+          if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+            EMOJI="✅"
+            STATUS="merged"
+            COLOR="3066993"
+            ACTION_TEXT="merged"
+          else
+            EMOJI="🚫"
+            STATUS="closed"
+            COLOR="15158332"
+            ACTION_TEXT="closed"
+          fi
+
+          echo "emoji=$EMOJI" >> $GITHUB_OUTPUT
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "action_text=$ACTION_TEXT" >> $GITHUB_OUTPUT
+          echo "color=$COLOR" >> $GITHUB_OUTPUT
+
+      - name: Send to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EMOJI: ${{ steps.pr-status.outputs.emoji }}
+          ACTION_TEXT: ${{ steps.pr-status.outputs.action_text }}
+          COLOR: ${{ steps.pr-status.outputs.color }}
+        run: |
+          MESSAGE="$EMOJI PR #$PR_NUMBER by $PR_AUTHOR was $ACTION_TEXT: $PR_TITLE"
+          TRUNCATED_MESSAGE="${MESSAGE:0:200}"
+          if [ ${#MESSAGE} -gt 200 ]; then
+            TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
+          fi
+
+          curl -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg title "$EMOJI PR #$PR_NUMBER $ACTION_TEXT" \
+              --arg url "$PR_URL" \
+              --arg message "$TRUNCATED_MESSAGE" \
+              --arg author "$PR_AUTHOR" \
+              --arg color "$COLOR" \
+              '{
+                embeds: [{
+                  title: $title,
+                  url: $url,
+                  color: ($color | tonumber),
+                  fields: [
+                    { name: "Author", value: $author, inline: true }
+                  ],
+                  description: $message
+                }]
+              }')" \
+            "$DISCORD_WEBHOOK_URL"

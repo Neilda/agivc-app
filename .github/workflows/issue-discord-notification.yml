@@ -1,0 +1,53 @@
+name: Issue Discord Notification
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          EMOJI="📝"
+          COLOR="5814783"
+
+          if [ -z "$ISSUE_BODY" ] || [ "$ISSUE_BODY" == "null" ] || [ "$ISSUE_BODY" == "" ]; then
+            MESSAGE="New issue #$ISSUE_NUMBER by $ISSUE_AUTHOR: $ISSUE_TITLE"
+          else
+            CLEANED_BODY=$(echo "$ISSUE_BODY" | sed 's/[[:space:]]/ /g' | tr -d '\n' | head -c 150)
+            MESSAGE="New issue #$ISSUE_NUMBER by $ISSUE_AUTHOR: $ISSUE_TITLE - $CLEANED_BODY"
+          fi
+
+          TRUNCATED_MESSAGE="${MESSAGE:0:200}"
+          if [ ${#MESSAGE} -gt 200 ]; then
+            TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
+          fi
+
+          curl -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg title "$EMOJI Issue #$ISSUE_NUMBER opened" \
+              --arg url "$ISSUE_URL" \
+              --arg message "$TRUNCATED_MESSAGE" \
+              --arg author "$ISSUE_AUTHOR" \
+              --arg color "$COLOR" \
+              '{
+                embeds: [{
+                  title: $title,
+                  url: $url,
+                  color: ($color | tonumber),
+                  fields: [
+                    { name: "Author", value: $author, inline: true }
+                  ],
+                  description: $message
+                }]
+              }')" \
+            "$DISCORD_WEBHOOK_URL"

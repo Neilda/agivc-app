@@ -116,11 +116,11 @@ jobs:
           STATE: ${{ steps.deployment-info.outputs.state }}
         run: |
           if [ "$ENVIRONMENT" == "production" ]; then
-            MESSAGE="$EMOJI Production deployment $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
+            MESSAGE="Production deployment $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
           elif [ -n "$PR_NUMBER" ] && [ "$PR_NUMBER" != "" ]; then
-            MESSAGE="$EMOJI Preview deployment for PR #$PR_NUMBER $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
+            MESSAGE="Preview deployment for PR #$PR_NUMBER $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
           else
-            MESSAGE="$EMOJI Preview deployment $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
+            MESSAGE="Preview deployment $STATUS_TEXT. Preview: $DEPLOYMENT_URL"
           fi
 
           TRUNCATED_MESSAGE="${MESSAGE:0:200}"
