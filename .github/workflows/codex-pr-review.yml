@@ -39,7 +39,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: Post Codex feedback
+      - name: Post Codex feedback to PR
         uses: actions/github-script@v7
         with:
           github-token: ${{ github.token }}
@@ -52,3 +52,35 @@ jobs:
             });
         env:
           CODEX_FINAL_MESSAGE: ${{ needs.codex.outputs.final_message }}
+
+      - name: Send to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          CODEX_MESSAGE: ${{ needs.codex.outputs.final_message }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          TRUNCATED_MESSAGE="${CODEX_MESSAGE:0:1800}"
+          if [ ${#CODEX_MESSAGE} -gt 1800 ]; then
+            TRUNCATED_MESSAGE="${TRUNCATED_MESSAGE}..."
+          fi
+
+          curl -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg title "🤖 Codex Review: $PR_TITLE" \
+              --arg url "$PR_URL" \
+              --arg author "$PR_AUTHOR" \
+              --arg review "$TRUNCATED_MESSAGE" \
+              '{
+                embeds: [{
+                  title: $title,
+                  url: $url,
+                  color: 5814783,
+                  fields: [
+                    { name: "Author", value: $author, inline: true }
+                  ],
+                  description: $review
+                }]
+              }')" \
+            "$DISCORD_WEBHOOK_URL"
