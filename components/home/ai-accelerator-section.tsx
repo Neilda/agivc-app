@@ -4,7 +4,7 @@ export function AIAcceleratorSection() {
   return (
     <SectionWithMedia
       title="AI Accelerator"
-      description="A 3-month intensive program, with ~2 weeks spent in San Francisco. We invest alongside our VC partners at the end of the program to help you find product market fit."
+      description="A 3-month intensive program, with 2.5 weeks spent in San Francisco. We invest alongside our VC partners at the end of the program to help you find product market fit."
       media={{
         type: "image",
         src: "/logos/organizers-posed-photo.jpg",
