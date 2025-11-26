@@ -43,7 +43,7 @@ export function BatchSchedule() {
                 <h3 className="text-2xl font-bold text-foreground mb-3">Weeks 9-12: Demo Day</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Intensive Demo Day prep with presentation coaching and pitch refinement. Present to top Canadian
-                  investors and press. Prepare for SF trip, with 2.5 weeks in San Francisco. Continue momentum with fundraising support and ongoing community access.
+                  investors and press. Prepare for SF trip, with ~2 weeks in San Francisco. Continue momentum with fundraising support and ongoing community access.
                 </p>
               </div>
             </div>
