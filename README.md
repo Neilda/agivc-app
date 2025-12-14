@@ -11,3 +11,6 @@ Landing page for AGI Ventures Canada (AGIVC) - Investing in Canadian AI and robo
 Your project is live at:
 
 **[https://agiventures.ca](https://agiventures.ca)**
+
+---
+*Last updated: Test deployment verification*
