@@ -1,3 +1,5 @@
+import { SectionWithMedia } from "@/components/sections/section-with-media";
+
 export function ForwardDeployedSection() {
   return (
     <section className="bg-muted/30">
